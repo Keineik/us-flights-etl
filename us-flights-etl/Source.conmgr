@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Source"
+  DTS:DTSID="{392B993B-24D6-424A-A670-57D3D4F492FC}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::Source_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{392B993B-24D6-424A-A670-57D3D4F492FC}LAPTOP-ONJ8RFFS.FLIGHTS_Source;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

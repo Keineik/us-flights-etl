@@ -1,0 +1,130 @@
+# SSIS Project Files and Folders
+bin/
+obj/
+.vs/
+.vscode/
+packages/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+*.swp
+*.swo
+*~
+
+# SSIS-specific files to ignore
+bin/
+obj/
+.vs/
+*.dtsx.bak
+*.conmgr.bak
+*.dtsConfig.bak
+
+# Package deployment model files
+*.deploymodel
+
+# SSIS Runtime
+.dtsx.bak
+*.backup
+
+# SQL Server and Database files
+*.mdf
+*.ldf
+*.ndf
+
+# Configuration files (if you want to exclude local configs)
+# *.dtsConfig  # Uncomment if you have deployment configs with sensitive data
+# app.config   # Uncomment if app.config contains local settings
+# web.config   # Uncomment if applicable
+
+# Sensitive data and credentials
+*.password
+*.pwd
+secrets.json
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node modules (if using npm/typescript tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python cache (if using Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+nuget.config
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+
+# Common IDE files
+.editorconfig.user
+.DS_Store
+
+# Local environment variables
+.env.local
+.env.*.local
+
+# Build artifacts
+artifacts/
+
+# Publish profiles (if they contain sensitive data)
+*.pubxml
+*.pubxml.user
+
+# DTSX package binary caches
+*.dtsx.bak
+
+# Any local configuration overrides
+local.settings.json
+local.settings.*.json
