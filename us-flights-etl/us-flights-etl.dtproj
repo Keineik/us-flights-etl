@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-ONJ8RFFS</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+CMB7DevQ0WAN0SCp6ApqAAAAAACAAAAAAAQZgAAAAEAACAAAABm4NJ4HpqzOeZ/LCkrS9x7cZdWKWSPq5x2SNVGlGIflgAAAAAOgAAAAAIAACAAAAAFmrTyEOpn8CTUzUkUC2Mn1yfICJZqtpc8aNYuWDRpnpAAAADRKmDGSGKklSMnalCp22aBzlwdYj3P8eJwvZfvNTqfjaHqqGsIXPhBQIbR3gsq+2KS7qKeK+QwSuqa6x82p4by5eFJ/osVJB0YYyP4KxwIeU1NUT0loJ7jPpXCHC8ElNGdpdO4Asru922exwAWzceiSWOx17UILLsLety2aI1wDiEM6FRfs6QgBQLmJs+zls5AAAAApAYc5o/lP55Ey7DUMs0Cqtjc74WIJ84THN+66WQec2thI9Q+KAIRjemyfGfQ6VUrQS4ilTamh2HFEtbB3dgsRg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+CMB7DevQ0WAN0SCp6ApqAAAAAACAAAAAAAQZgAAAAEAACAAAAB2l2Khm57OynL1JIzH2a8jkshfhuPBhDChYJYZI9386gAAAAAOgAAAAAIAACAAAAAEJJyMLEj9zg/U2zc3WMvv6y8D/rJhxA8xcWOfUpp/p5AAAAAVOzos9J6I6XzJLyJtsE5Si6Gn6+yWLYjGXrTbfGIY5MEKMNPDkLM9hwGFgVRO+lP0e3o6+KW2P2rbYlnxPkp+MfzWdw9X8T8oflGLxunTC9vtH6RxBKlZAzD84PmI/K8MX4bjBsK/Fdaa/kBLIcn4mqKtxP/xhiy6TVWCLf2ueZyb8a3PQfb36U/clyfN6nxAAAAA5ZcOEn/Z7eW8gnAh0zL+3FfcKyyWnULIqz6/w2853UujxmW7Qb8kNBx4ddtFxidncg/t7eXQFkB6K5J0ScSJ0A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,13 +34,13 @@
           <SSIS:Package SSIS:Name="Source_to_Stage.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
-          <SSIS:ConnectionManager SSIS:Name="Metadata.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Source.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Stage.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="FLIGHTS_Metadata.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="FLIGHTS_Source.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="FLIGHTS_Stage.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.ConnectByProxy">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -55,7 +55,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.ConnectRetryCount">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.ConnectRetryCount">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -70,7 +70,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.ConnectRetryInterval">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.ConnectRetryInterval">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -85,7 +85,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.ConnectUsingManagedIdentity">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.ConnectUsingManagedIdentity">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -100,7 +100,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -115,7 +115,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.Password">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -129,7 +129,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -144,7 +144,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -159,7 +159,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Metadata.UserName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Metadata.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -173,7 +173,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.ConnectByProxy">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -188,7 +188,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.ConnectRetryCount">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.ConnectRetryCount">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -203,7 +203,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.ConnectRetryInterval">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.ConnectRetryInterval">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -218,7 +218,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.ConnectUsingManagedIdentity">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.ConnectUsingManagedIdentity">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -233,7 +233,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -248,7 +248,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.Password">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -262,7 +262,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -277,7 +277,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -292,7 +292,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Source.UserName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Source.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -306,7 +306,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.ConnectByProxy">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -321,7 +321,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.ConnectRetryCount">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.ConnectRetryCount">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -336,7 +336,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.ConnectRetryInterval">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.ConnectRetryInterval">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -351,7 +351,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.ConnectUsingManagedIdentity">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.ConnectUsingManagedIdentity">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -366,7 +366,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -381,7 +381,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.Password">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -395,7 +395,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -410,7 +410,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -425,7 +425,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Stage.UserName">
+            <SSIS:Parameter SSIS:Name="CM.FLIGHTS_Stage.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -464,10 +464,10 @@
                 <SSIS:Property SSIS:Name="Name">Source_to_Stage</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">44</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C2F9CF07-FE03-4357-A348-AC9143C321BA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BAE87B10-34AA-4137-942E-757DB276E5B4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

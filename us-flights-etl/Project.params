@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="Metadata_ConnectionString">
+    SSIS:Name="FLIGHTS_Metadata_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{067ae75e-b32e-41f7-9186-dc0b44bcd6e8}</SSIS:Property>
+        SSIS:Name="ID">{083251a4-fd96-47cc-a76d-8f0dcd1eb179}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -16,16 +16,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Metadata;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{15CBE9B3-8C9A-4054-8F0F-B4BCC6E89AA0}LAPTOP-ONJ8RFFS.FLIGHTS_Metadata;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{73914600-D42E-462F-948C-B3632AA35250}LAPTOP-ONJ8RFFS.FLIGHTS_Metadata;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="Source_ConnectionString">
+    SSIS:Name="FLIGHTS_Source_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{5b2e310c-c01e-440d-95f3-0271abfd6411}</SSIS:Property>
+        SSIS:Name="ID">{07e4214b-9f31-4206-a26e-8e8790e31831}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -37,16 +37,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{392B993B-24D6-424A-A670-57D3D4F492FC}LAPTOP-ONJ8RFFS.FLIGHTS_Source;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{EEF656B8-37CB-41B6-AC58-552A1A29D951}LAPTOP-ONJ8RFFS.FLIGHTS_Source;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="Stage_ConnectionString">
+    SSIS:Name="FLIGHTS_Stage_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{43769ccf-b8f2-4b7d-a7b1-bd31e121c674}</SSIS:Property>
+        SSIS:Name="ID">{51c48341-0181-47b5-917d-a502d1631f5a}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -58,7 +58,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Stage;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{F94A6270-EEB3-44A9-8253-32E03ED3E3B0}LAPTOP-ONJ8RFFS.FLIGHTS_Stage;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{AEDEED49-1B34-42F5-BA9C-46162270C127}LAPTOP-ONJ8RFFS.FLIGHTS_Stage;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
