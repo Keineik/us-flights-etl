@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=GENESIS;Initial Catalog=FLIGHTS_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{73914600-D42E-462F-948C-B3632AA35250}LAPTOP-ONJ8RFFS.FLIGHTS_Metadata;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{73914600-D42E-462F-948C-B3632AA35250}LAPTOP-ONJ8RFFS.FLIGHTS_Metadata;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=GENESIS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{EEF656B8-37CB-41B6-AC58-552A1A29D951}GENESIS.FLIGHTS_Source;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{EEF656B8-37CB-41B6-AC58-552A1A29D951}LAPTOP-ONJ8RFFS.FLIGHTS_Source;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -58,7 +58,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=GENESIS;Initial Catalog=FLIGHTS_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{AEDEED49-1B34-42F5-BA9C-46162270C127}GENESIS.FLIGHTS_Stage;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{AEDEED49-1B34-42F5-BA9C-46162270C127}LAPTOP-ONJ8RFFS.FLIGHTS_Stage;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
