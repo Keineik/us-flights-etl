@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Source_to_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{36EA8F60-1659-434C-AA90-8D07A0C443A6}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{5DB99DF3-EFED-41E3-BF5A-D6DE819045BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2931,7 +2931,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[STG_Flights_3]</property>
+                      name="OpenRowset">[dbo].[STG_Flights_2]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4788,7 +4788,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,42.4"
+          Size="148,41.6"
           Id="Package\Extract Airlines"
           TopLeft="130.208327512567,281.666663574022" />
         <NodeLayout
@@ -5028,30 +5028,30 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="473.708315777903,107.228070125355">
+          TopLeft="473.708315777903,106.961403458689">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-268.166654932002,174.438593448667"
+              EndConnector="-269.499988265336,174.705260115333"
               Start="0,0"
-              End="-268.166654932002,166.938593448667">
+              End="-269.499988265336,167.205260115333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.707169569678" />
+                    End="0,55.7984447374631" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,55.707169569678"
-                    Point2="0,59.707169569678"
-                    Point3="-4,59.707169569678" />
+                    Point1="0,55.7984447374631"
+                    Point2="0,59.7984447374631"
+                    Point3="-4,59.7984447374631" />
                   <mssgle:LineSegment
-                    End="-264.166654932002,59.707169569678" />
+                    End="-265.499988265336,59.7984447374631" />
                   <mssgle:CubicBezierSegment
-                    Point1="-264.166654932002,59.707169569678"
-                    Point2="-268.166654932002,59.707169569678"
-                    Point3="-268.166654932002,63.707169569678" />
+                    Point1="-265.499988265336,59.7984447374631"
+                    Point2="-269.499988265336,59.7984447374631"
+                    Point3="-269.499988265336,63.7984447374631" />
                   <mssgle:LineSegment
-                    End="-268.166654932002,166.938593448667" />
+                    End="-269.499988265336,167.205260115333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5449,7 +5449,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_3\Extract Flights_3">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.4,42.4"
           Id="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3"
@@ -5477,7 +5477,9 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
