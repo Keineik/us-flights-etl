@@ -39,4 +39,7 @@ GO
 INSERT INTO dbo.data_flow (TableName, LSET, CET) VALUES
 ('Flights_1', '1900-10-01 00:00:00', NULL),
 ('Flights_2', '1900-10-01 00:00:00', NULL),
-('Flights_3', '1900-10-01 00:00:00', NULL);
+('Flights_3', '1900-10-01 00:00:00', NULL),
+('NDS_Flights', '1900-10-01 00:00:00', NULL),
+('NDS_Airlines', '1900-10-01 00:00:00', NULL),
+('NDS_Airports', '1900-10-01 00:00:00', NULL);

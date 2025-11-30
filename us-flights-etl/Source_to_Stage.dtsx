@@ -11,72 +11,10 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Source_to_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{5DB99DF3-EFED-41E3-BF5A-D6DE819045BA}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{674C128D-3D5E-4514-95FF-A063F360D2DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9865A849-618F-4D47-A30C-0E8FB628F592}"
-      DTS:ObjectName="GENESIS.FLIGHTS_Source">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=GENESIS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Source_to_Stage-{9865A849-618F-4D47-A30C-0E8FB628F592}GENESIS.FLIGHTS_Source;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{D29486DF-0FA1-4560-8177-53A266EE49DC}"
-      DTS:ObjectName="GENESIS.FLIGHTS_Source 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=GENESIS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Source_to_Stage-{D29486DF-0FA1-4560-8177-53A266EE49DC}GENESIS.FLIGHTS_Source 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source 2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{812A8129-7B4F-49D0-940C-D10DE8435C9B}"
-      DTS:ObjectName="GENESIS.FLIGHTS_Source 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=GENESIS;Initial Catalog=FLIGHTS_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Source_to_Stage-{812A8129-7B4F-49D0-940C-D10DE8435C9B}GENESIS.FLIGHTS_Source 2;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4B32F2AB-2C6A-42E7-9D68-0C3E99182E8B}"
-      DTS:ObjectName="GENESIS.FLIGHTS_Stage">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=GENESIS;Initial Catalog=FLIGHTS_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Source_to_Stage-{4B32F2AB-2C6A-42E7-9D68-0C3E99182E8B}GENESIS.FLIGHTS_Stage;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{25BCCEC0-657E-48C2-B1E6-DC7714D2D011}"
-      DTS:ObjectName="GENESIS.FLIGHTS_Stage 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=GENESIS;Initial Catalog=FLIGHTS_Stage;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Source_to_Stage-{25BCCEC0-657E-48C2-B1E6-DC7714D2D011}GENESIS.FLIGHTS_Stage 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -239,8 +177,8 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
               <connections>
                 <connection
                   refId="Package\Extract Airlines\Source Airlines.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
-                  connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
+                  connectionManagerID="{EEF656B8-37CB-41B6-AC58-552A1A29D951}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Source]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -256,7 +194,7 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Output].ExternalColumns[IATA_CODE]"
-                      length="10"
+                      length="2"
                       lineageId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Output].Columns[IATA_CODE]"
                       name="IATA_CODE"
                       truncationRowDisposition="FailComponent" />
@@ -277,7 +215,7 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
                       refId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Output].ExternalColumns[IATA_CODE]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="2"
                       name="IATA_CODE" />
                     <externalMetadataColumn
                       refId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
@@ -295,7 +233,7 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
                       refId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Error Output].Columns[IATA_CODE]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="2"
                       lineageId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Error Output].Columns[IATA_CODE]"
                       name="IATA_CODE" />
                     <outputColumn
@@ -380,8 +318,8 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
               <connections>
                 <connection
                   refId="Package\Extract Airlines\STG_Airlines.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
-                  connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
+                  connectionManagerID="{AEDEED49-1B34-42F5-BA9C-46162270C127}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Stage]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -397,7 +335,7 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
                       refId="Package\Extract Airlines\STG_Airlines.Inputs[OLE DB Destination Input].Columns[IATA_CODE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="2"
                       cachedName="IATA_CODE"
                       externalMetadataColumnId="Package\Extract Airlines\STG_Airlines.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
                       lineageId="Package\Extract Airlines\Source Airlines.Outputs[OLE DB Source Output].Columns[IATA_CODE]" />
@@ -415,7 +353,7 @@ OR ( updated_at &gt; ? AND updated_at &lt;= ? )</property>
                       refId="Package\Extract Airlines\STG_Airlines.Inputs[OLE DB Destination Input].ExternalColumns[IATA_CODE]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="2"
                       name="IATA_CODE" />
                     <externalMetadataColumn
                       refId="Package\Extract Airlines\STG_Airlines.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
@@ -1012,8 +950,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Source 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source 1]"
+                      connectionManagerID="{EEF656B8-37CB-41B6-AC58-552A1A29D951}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Source]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1721,8 +1659,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
+                      connectionManagerID="{AEDEED49-1B34-42F5-BA9C-46162270C127}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Stage]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2133,7 +2071,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_1 LSET, CET"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2157,7 +2095,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_1 LSET"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2265,8 +2203,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
+                      connectionManagerID="{EEF656B8-37CB-41B6-AC58-552A1A29D951}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Source]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2974,8 +2912,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
+                      connectionManagerID="{AEDEED49-1B34-42F5-BA9C-46162270C127}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Stage]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3386,7 +3324,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_2 LSET, CET"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3410,7 +3348,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_2 LSET"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3518,8 +3456,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Source]"
+                      connectionManagerID="{EEF656B8-37CB-41B6-AC58-552A1A29D951}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Source]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4227,8 +4165,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                   <connections>
                     <connection
                       refId="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
-                      connectionManagerRefId="Package.ConnectionManagers[GENESIS.FLIGHTS_Stage]"
+                      connectionManagerID="{AEDEED49-1B34-42F5-BA9C-46162270C127}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[FLIGHTS_Stage]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4639,7 +4577,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_3 LSET, CET"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4663,7 +4601,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_3 LSET"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4719,7 +4657,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{4B32F2AB-2C6A-42E7-9D68-0C3E99182E8B}"
+          SQLTask:Connection="{AEDEED49-1B34-42F5-BA9C-46162270C127}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE STG_Airlines&#xA;TRUNCATE TABLE STG_Airports&#xA;TRUNCATE TABLE STG_Flights_1&#xA;TRUNCATE TABLE STG_Flights_2&#xA;TRUNCATE TABLE STG_Flights_3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -4788,23 +4726,23 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,41.6"
+          Size="148,41.3333333333334"
           Id="Package\Extract Airlines"
           TopLeft="130.208327512567,281.666663574022" />
         <NodeLayout
-          Size="152,42.4"
+          Size="152,42.6666666666667"
           Id="Package\Extract Airports"
           TopLeft="314.583319270363,279.42105069085" />
         <NodeLayout
-          Size="158.4,42.4"
+          Size="158.666666666667,42.6666666666667"
           Id="Package\Extract Flights_1\Extract Flights_1"
           TopLeft="33.0356882219874,94.1679184361593" />
         <NodeLayout
-          Size="160.8,42.4"
+          Size="160.666666666667,42.6666666666667"
           Id="Package\Extract Flights_1\Get Flights_1 LSET, CET"
           TopLeft="29.2499756924814,19.184210376066" />
         <NodeLayout
-          Size="172,42.4"
+          Size="172,42.6666666666667"
           Id="Package\Extract Flights_1\Set Flights_1 LSET"
           TopLeft="23.0594997787412,171.90977334642" />
         <EdgeLayout
@@ -4854,20 +4792,20 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="209.6,228"
-          Size="209.6,270.4"
+          PanelSize="209.333333333334,228"
+          Size="209.333333333334,270.666666666667"
           Id="Package\Extract Flights_1"
           TopLeft="507.994127102106,266.550122831297" />
         <NodeLayout
-          Size="158.4,42.4"
+          Size="158.666666666667,42.6666666666667"
           Id="Package\Extract Flights_2\Extract Flights_2"
           TopLeft="36.1606880822889,86.1854623834544" />
         <NodeLayout
-          Size="166.4,42.4"
+          Size="166.666666666667,42.6666666666667"
           Id="Package\Extract Flights_2\Get Flights_2 LSET, CET"
           TopLeft="28.208309072381,12.342105188033" />
         <NodeLayout
-          Size="172,42.4"
+          Size="172,42.6666666666667"
           Id="Package\Extract Flights_2\Set Flights_2 LSET"
           TopLeft="29.3094994993442,162.786966429043" />
         <EdgeLayout
@@ -4917,20 +4855,20 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="209.6,227.2"
-          Size="209.6,270.4"
+          PanelSize="209.333333333334,228"
+          Size="209.333333333334,270.666666666667"
           Id="Package\Extract Flights_2"
           TopLeft="756.273865554836,267.218042837568" />
         <NodeLayout
-          Size="158.4,42.4"
+          Size="158.666666666667,42.6666666666667"
           Id="Package\Extract Flights_3\Extract Flights_3"
           TopLeft="35.1190214621887,88.4661641127986" />
         <NodeLayout
-          Size="174.4,42.4"
+          Size="174.666666666667,42.6666666666667"
           Id="Package\Extract Flights_3\Get Flights_3 LSET, CET"
           TopLeft="26.1249758321798,18.0438595113937" />
         <NodeLayout
-          Size="172,42.4"
+          Size="172,42.6666666666667"
           Id="Package\Extract Flights_3\Set Flights_3 LSET"
           TopLeft="27.2261662591433,154.804510376337" />
         <EdgeLayout
@@ -4980,16 +4918,16 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="215.2,219.2"
-          Size="215.2,262.4"
+          PanelSize="215.333333333334,220"
+          Size="215.333333333334,262.666666666667"
           Id="Package\Extract Flights_3"
           TopLeft="994.654743137282,267.364659163206" />
         <NodeLayout
-          Size="120,42.4"
+          Size="120,42.6666666666667"
           Id="Package\Set CET"
           TopLeft="794.999965801836,150.999999000838" />
         <NodeLayout
-          Size="196,42.4"
+          Size="196,42.6666666666667"
           Id="Package\Truncate Staging Tables"
           TopLeft="422.708315777903,64.5614034586886" />
         <EdgeLayout
@@ -5193,11 +5131,11 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.4,42.4"
+          Size="142.666666666667,42.6666666666667"
           Id="Package\Extract Airlines\STG_Airlines"
           TopLeft="125.499994657934,174.263156075475" />
         <NodeLayout
-          Size="152,42.4"
+          Size="152,42.6666666666667"
           Id="Package\Extract Airlines\Source Airlines"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5321,13 +5259,13 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_1\Extract Flights_1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.4,42.4"
+          Size="150.666666666667,42.6666666666667"
           Id="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1"
           TopLeft="123.499994717539,181.263155866858" />
         <NodeLayout
-          Size="160,42.4"
+          Size="160,42.6666666666667"
           Id="Package\Extract Flights_1\Extract Flights_1\Source Flights_1"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5349,7 +5287,9 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5385,13 +5325,13 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_2\Extract Flights_2">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.4,42.4"
+          Size="150.666666666667,42.6666666666667"
           Id="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2"
           TopLeft="120.249994758517,162.526314023789" />
         <NodeLayout
-          Size="160,42.4"
+          Size="160,42.6666666666667"
           Id="Package\Extract Flights_2\Extract Flights_2\Source Flights_2"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5413,7 +5353,9 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5451,11 +5393,11 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.4,42.4"
+          Size="150.666666666667,42.6666666666667"
           Id="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3"
           TopLeft="90.2499956525868,158.877196845035" />
         <NodeLayout
-          Size="160,42.4"
+          Size="160,42.6666666666667"
           Id="Package\Extract Flights_3\Extract Flights_3\Source Flights_3"
           TopLeft="86.8749956693506,44.9298296562799" />
         <EdgeLayout

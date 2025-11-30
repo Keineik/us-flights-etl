@@ -18,17 +18,13 @@ GO
 
 -- Table: SourceSystem
 CREATE TABLE dbo.SourceSystem (
-    SourceSK           INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Surrogate Key
-    SourceName NVARCHAR(100),
-    Description NVARCHAR(100)
+    SourceSK			INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Surrogate Key
+    SourceName			NVARCHAR(100),
+    Description			NVARCHAR(100)
 );
 GO
 
 INSERT INTO SourceSystem (SourceName) VALUES ('Source 1'), ('Source 2'), ('Source 3')
-
--- =====================================================================
--- 2. CREATE REFERENCE TABLES (DIMENSIONS SOURCE)
--- =====================================================================
 
 -- Table: Airlines
 -- Stores unique airline information
@@ -50,7 +46,7 @@ GO
 -- Stores unique airport details
 CREATE TABLE dbo.Airports (
     AirportSK           INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- Surrogate Key
-    AirportNK           VARCHAR(10) NOT NULL,                   -- Natural Key
+    AirportNK           CHAR(10) NOT NULL,                   -- Natural Key
     AirportName         NVARCHAR(100),
     City                NVARCHAR(100),
     [State]             VARCHAR(2),
@@ -67,10 +63,6 @@ CREATE TABLE dbo.Airports (
 );
 GO
 
--- =====================================================================
--- 3. CREATE TRANSACTION TABLE (FACT SOURCE)
--- =====================================================================
-
 -- Table: Flights
 -- Purpose: Consolidated flight data with relationships to Airlines and Airports
 CREATE TABLE dbo.Flights (
@@ -80,6 +72,11 @@ CREATE TABLE dbo.Flights (
     AirlineSK           INT NOT NULL, 
     OriginAirportSK     INT NOT NULL,
     DestAirportSK       INT NOT NULL,
+
+	-- Natural Keys of Reference Tables
+	Airline				CHAR(2) NOT NULL,
+	OriginAirport		VARCHAR(10) NOT NULL,
+	DestAirport			VARCHAR(10) NOT NULL,
     
     -- Flight Identification
     FlightDate          DATE NOT NULL,
@@ -93,19 +90,21 @@ CREATE TABLE dbo.Flights (
     ArrivalTime         VARCHAR(10),
     
     -- Performance Metrics (Calculated fields for analysis)
-    DepDelay            FLOAT,  -- Difference in minutes
-    ArrDelay            FLOAT,  -- Difference in minutes
+    DepartureDelay      FLOAT,  -- Difference in minutes
+    ArrivalDelay        FLOAT,  -- Difference in minutes
     TaxiOut             FLOAT,
     TaxiIn              FLOAT,
     WheelsOff           VARCHAR(10),
     WheelsOn            VARCHAR(10),
+	ScheduledTime		FLOAT,
+	ElapsedTime			FLOAT,
     AirTime             FLOAT,
     Distance            FLOAT,
     
     -- Status Flags
     Cancelled           INT,
     Diverted            INT,
-    CancellationReason  VARCHAR(1), -- 'A', 'B', 'C', 'D'
+    CancellationReason  CHAR(1), -- 'A', 'B', 'C', 'D'
     
     -- Delay Breakdown (in minutes)
     AirSystemDelay      FLOAT,
