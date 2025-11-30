@@ -3,6 +3,8 @@
   DTS:ObjectName="FLIGHTS_DDS"
   DTS:DTSID="{645BBF17-A0C9-49E5-8647-A62B1B5BAD46}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::FLIGHTS_DDS_ConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"

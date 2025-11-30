@@ -79,7 +79,28 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=GENESIS;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{3915A975-714C-4801-9848-F4CFE31F5B27}GENESIS.FLIGHTS_NDS;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{3915A975-714C-4801-9848-F4CFE31F5B27}LAPTOP-ONJ8RFFS.FLIGHTS_NDS;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="FLIGHTS_DDS_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{59fb6644-7020-4e23-a2f5-d31e7fec757e}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_DDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{645BBF17-A0C9-49E5-8647-A62B1B5BAD46}LAPTOP-ONJ8RFFS.FLIGHTS_DDS;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

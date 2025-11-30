@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-us-flights-etl-{3915A975-714C-4801-9848-F4CFE31F5B27}LAPTOP-ONJ8RFFS.FLIGHTS_NDS;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=LAPTOP-ONJ8RFFS;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-us-flights-etl-{3915A975-714C-4801-9848-F4CFE31F5B27}LAPTOP-ONJ8RFFS.FLIGHTS_NDS;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
