@@ -84,21 +84,21 @@ CREATE TABLE dbo.Flights (
     TailNumber          VARCHAR(20),
     
     -- Time Metrics (Stored as Time or Varchar(10) HHMM depending on preference)
-    ScheduledDeparture  VARCHAR(10), 
-    DepartureTime       VARCHAR(10),
-    ScheduledArrival    VARCHAR(10),
-    ArrivalTime         VARCHAR(10),
+    ScheduledDeparture  TIME, 
+    DepartureTime       TIME,
+    ScheduledArrival    TIME,
+    ArrivalTime         TIME,
     
     -- Performance Metrics (Calculated fields for analysis)
     DepartureDelay      FLOAT,  -- Difference in minutes
     ArrivalDelay        FLOAT,  -- Difference in minutes
     TaxiOut             FLOAT,
     TaxiIn              FLOAT,
-    WheelsOff           VARCHAR(10),
-    WheelsOn            VARCHAR(10),
+    WheelsOff           TIME,
+    WheelsOn            TIME,
 	ScheduledTime		FLOAT,
 	ElapsedTime			FLOAT,
-    AirTime             FLOAT,
+    AirTime             FLOAT,  
     Distance            FLOAT,
     
     -- Status Flags
@@ -116,6 +116,11 @@ CREATE TABLE dbo.Flights (
     -- Metadata
     CreatedDate         DATETIME2 DEFAULT GETDATE(),
     UpdatedDate         DATETIME2 DEFAULT GETDATE(),
+
+    SourceCreatedDate DATETIME2,
+    SourceModifiedDate DATETIME2,
+
+    LoadDate DATETIME2 DEFAULT GETDATE(),
 
     SourceSK            INT -- To track which file it came from
 

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Source_to_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{674C128D-3D5E-4514-95FF-A063F360D2DA}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{FA914DA1-1EBA-4F72-9302-4A9393F43034}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1260,7 +1260,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
@@ -1394,14 +1395,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1411,7 +1412,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                       <outputColumns>
                         <outputColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           lineageId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[DATE]"
                           name="DATE" />
                         <outputColumn
@@ -1573,16 +1575,16 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <outputColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          name="CREATED"
-                          scale="7" />
+                          name="CREATED" />
                         <outputColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          name="MODIFIED"
-                          scale="7" />
+                          name="MODIFIED" />
                         <outputColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\Source Flights_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1882,7 +1884,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1.Inputs[OLE DB Destination Input].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
@@ -2016,14 +2019,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2071,7 +2074,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_1 LSET, CET"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2095,7 +2098,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_1 LSET"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2513,7 +2516,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
@@ -2647,14 +2651,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2664,7 +2668,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                       <outputColumns>
                         <outputColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           lineageId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[DATE]"
                           name="DATE" />
                         <outputColumn
@@ -2826,16 +2831,16 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <outputColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          name="CREATED"
-                          scale="7" />
+                          name="CREATED" />
                         <outputColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          name="MODIFIED"
-                          scale="7" />
+                          name="MODIFIED" />
                         <outputColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\Source Flights_2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3135,7 +3140,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2.Inputs[OLE DB Destination Input].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
@@ -3269,14 +3275,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3324,7 +3330,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_2 LSET, CET"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3348,7 +3354,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_2 LSET"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3766,7 +3772,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Output].ExternalColumns[AIRLINE]"
@@ -3900,14 +3907,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3917,7 +3924,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                       <outputColumns>
                         <outputColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           lineageId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[DATE]"
                           name="DATE" />
                         <outputColumn
@@ -4079,16 +4087,16 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <outputColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[CREATED]"
-                          name="CREATED"
-                          scale="7" />
+                          name="CREATED" />
                         <outputColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          dataType="dbTimeStamp2"
+                          dataType="wstr"
+                          length="27"
                           lineageId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
-                          name="MODIFIED"
-                          scale="7" />
+                          name="MODIFIED" />
                         <outputColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\Source Flights_3.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -4388,7 +4396,8 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3.Inputs[OLE DB Destination Input].ExternalColumns[DATE]"
-                          dataType="dbDate"
+                          dataType="wstr"
+                          length="10"
                           name="DATE" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
@@ -4522,14 +4531,14 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
                           name="WEATHER_DELAY" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
-                          dataType="dbTimeStamp2"
-                          name="CREATED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
                         <externalMetadataColumn
                           refId="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
-                          dataType="dbTimeStamp2"
-                          name="MODIFIED"
-                          scale="7" />
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4577,7 +4586,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Flights_3 LSET, CET"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4601,7 +4610,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Set Flights_3 LSET"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4726,23 +4735,23 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,41.3333333333334"
+          Size="148,41.5"
           Id="Package\Extract Airlines"
           TopLeft="130.208327512567,281.666663574022" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.5"
           Id="Package\Extract Airports"
           TopLeft="314.583319270363,279.42105069085" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.5,42.5"
           Id="Package\Extract Flights_1\Extract Flights_1"
           TopLeft="33.0356882219874,94.1679184361593" />
         <NodeLayout
-          Size="160.666666666667,42.6666666666667"
+          Size="160.5,42.5"
           Id="Package\Extract Flights_1\Get Flights_1 LSET, CET"
           TopLeft="29.2499756924814,19.184210376066" />
         <NodeLayout
-          Size="172,42.6666666666667"
+          Size="172,42.5"
           Id="Package\Extract Flights_1\Set Flights_1 LSET"
           TopLeft="23.0594997787412,171.90977334642" />
         <EdgeLayout
@@ -4792,20 +4801,20 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="209.333333333334,228"
-          Size="209.333333333334,270.666666666667"
+          PanelSize="209.5,228"
+          Size="209.5,270.5"
           Id="Package\Extract Flights_1"
           TopLeft="507.994127102106,266.550122831297" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.5,42.5"
           Id="Package\Extract Flights_2\Extract Flights_2"
           TopLeft="36.1606880822889,86.1854623834544" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="166.5,42.5"
           Id="Package\Extract Flights_2\Get Flights_2 LSET, CET"
           TopLeft="28.208309072381,12.342105188033" />
         <NodeLayout
-          Size="172,42.6666666666667"
+          Size="172,42.5"
           Id="Package\Extract Flights_2\Set Flights_2 LSET"
           TopLeft="29.3094994993442,162.786966429043" />
         <EdgeLayout
@@ -4855,20 +4864,20 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="209.333333333334,228"
-          Size="209.333333333334,270.666666666667"
+          PanelSize="209.5,228"
+          Size="209.5,270.5"
           Id="Package\Extract Flights_2"
           TopLeft="756.273865554836,267.218042837568" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.5,42.5"
           Id="Package\Extract Flights_3\Extract Flights_3"
           TopLeft="35.1190214621887,88.4661641127986" />
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
+          Size="174.5,42.5"
           Id="Package\Extract Flights_3\Get Flights_3 LSET, CET"
           TopLeft="26.1249758321798,18.0438595113937" />
         <NodeLayout
-          Size="172,42.6666666666667"
+          Size="172,42.5"
           Id="Package\Extract Flights_3\Set Flights_3 LSET"
           TopLeft="27.2261662591433,154.804510376337" />
         <EdgeLayout
@@ -4918,16 +4927,16 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="215.333333333334,220"
-          Size="215.333333333334,262.666666666667"
+          PanelSize="215.5,220"
+          Size="215.5,262.5"
           Id="Package\Extract Flights_3"
           TopLeft="994.654743137282,267.364659163206" />
         <NodeLayout
-          Size="120,42.6666666666667"
+          Size="120,42.5"
           Id="Package\Set CET"
           TopLeft="794.999965801836,150.999999000838" />
         <NodeLayout
-          Size="196,42.6666666666667"
+          Size="196,42.5"
           Id="Package\Truncate Staging Tables"
           TopLeft="422.708315777903,64.5614034586886" />
         <EdgeLayout
@@ -5131,11 +5140,11 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.666666666667,42.6666666666667"
+          Size="142.5,42.5"
           Id="Package\Extract Airlines\STG_Airlines"
           TopLeft="125.499994657934,174.263156075475" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.5"
           Id="Package\Extract Airlines\Source Airlines"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5259,13 +5268,13 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_1\Extract Flights_1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
+          Size="150.5,42.5"
           Id="Package\Extract Flights_1\Extract Flights_1\STG_Flights_1"
           TopLeft="123.499994717539,181.263155866858" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,42.5"
           Id="Package\Extract Flights_1\Extract Flights_1\Source Flights_1"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5287,9 +5296,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5325,13 +5332,13 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_2\Extract Flights_2">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
+          Size="150.5,42.5"
           Id="Package\Extract Flights_2\Extract Flights_2\STG_Flights_2"
           TopLeft="120.249994758517,162.526314023789" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,42.5"
           Id="Package\Extract Flights_2\Extract Flights_2\Source Flights_2"
           TopLeft="116.874994775281,48.5789468350338" />
         <EdgeLayout
@@ -5353,9 +5360,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5391,13 +5396,13 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
     design-time-name="Package\Extract Flights_3\Extract Flights_3">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
+          Size="150.5,42.5"
           Id="Package\Extract Flights_3\Extract Flights_3\STG_Flights_3"
           TopLeft="90.2499956525868,158.877196845035" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,42.5"
           Id="Package\Extract Flights_3\Extract Flights_3\Source Flights_3"
           TopLeft="86.8749956693506,44.9298296562799" />
         <EdgeLayout
@@ -5419,9 +5424,7 @@ WHERE  (CREATED &gt;= ?) AND (CREATED &lt; ?) OR
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
