@@ -9,6 +9,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=THUYF;Initial Catalog=FLIGHTS_DDS;Provider=SQLOLEDB;Integrated Security=SSPI;" />
+      DTS:ConnectionString="Data Source=TQPHONG;Initial Catalog=FLIGHTS_DDS;Provider=SQLOLEDB;Integrated Security=SSPI;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

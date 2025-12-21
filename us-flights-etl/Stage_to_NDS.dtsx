@@ -7,12 +7,12 @@
   DTS:CreatorName="GENESIS\ADMIN"
   DTS:DTSID="{2F2F0E9C-7820-4F38-ACA4-4BEF288BAE05}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{2879C138-CB2A-48BD-B70D-BAFFBFD78D96}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{65A05195-899B-48E6-8C54-7CBEC3DF57CA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\PC\Downloads\New Text Document.txt">
+          DTS:ConnectionString="C:\Users\Administrator\Desktop\New Text Document.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="DATE"
-              DTS:DTSID="{83A83560-83DA-48A9-811E-7388A2D677A6}"
+              DTS:DTSID="{EE665AE5-509E-47A2-8006-D102C87F3FA1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRLINE"
-              DTS:DTSID="{18AA2B10-4CF7-4C15-BE94-AFF22082AD41}"
+              DTS:DTSID="{5A395DD1-6B75-4651-BC6A-F782F1D27226}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -55,7 +55,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="FLIGHT_NUMBER"
-              DTS:DTSID="{0A3D1209-83F4-40B8-9CC7-A65AF1AA8B38}"
+              DTS:DTSID="{305CCC80-5426-4934-960D-4E9428CD40AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -64,7 +64,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TAIL_NUMBER"
-              DTS:DTSID="{F55C3937-C869-42CB-A956-84E79D177C53}"
+              DTS:DTSID="{5A662392-AD10-4A5F-BB8F-8DA4303DB4E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ORIGIN_AIRPORT"
-              DTS:DTSID="{D487766C-6CE4-412C-9ED3-22894B2E3228}"
+              DTS:DTSID="{3DBEC01E-3F2A-404D-87AB-284CC01DCC0F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DESTINATION_AIRPORT"
-              DTS:DTSID="{80656008-7D6A-4BBD-B117-0FFA62E8FC2E}"
+              DTS:DTSID="{343A53C0-84A1-4E8F-BA16-3CC9D1BEA52B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SCHEDULED_DEPARTURE"
-              DTS:DTSID="{6413949F-809C-4A05-B36A-6306AC8EC74E}"
+              DTS:DTSID="{FF7348EC-496A-4762-A909-C5DCFDFC655B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -100,7 +100,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DEPARTURE_TIME"
-              DTS:DTSID="{E5826EA3-ED55-4B8F-9739-F16B471DC8AF}"
+              DTS:DTSID="{DEEFA591-B615-4DF5-8BC5-6AFB2B51EE2D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +108,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="DEPARTURE_DELAY"
-              DTS:DTSID="{18B7D93B-6051-4F2E-8621-16A9F5C5F648}"
+              DTS:DTSID="{8CA6E047-1B95-487F-B4EC-DFCB940AE165}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +116,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="TAXI_OUT"
-              DTS:DTSID="{95CB614B-214C-44C0-8702-5A2F7679F6B6}"
+              DTS:DTSID="{A2ECD53A-BEEA-441F-8113-510720A70244}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WHEELS_OFF"
-              DTS:DTSID="{35AE94E3-9480-4C27-8F56-26EF129A5A55}"
+              DTS:DTSID="{96C1D8F2-2B06-498B-BD6F-5D49904C864D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -133,7 +133,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="SCHEDULED_TIME"
-              DTS:DTSID="{660DF82F-A0CB-4F10-947C-90271D75B19B}"
+              DTS:DTSID="{A3121A0F-D7A3-42C3-830C-5EB16A1046B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -141,7 +141,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="ELAPSED_TIME"
-              DTS:DTSID="{C0A7D7C3-7A24-4978-BAE1-826F52A83FFE}"
+              DTS:DTSID="{B985981F-2178-448A-803D-34CB530CB4B3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="AIR_TIME"
-              DTS:DTSID="{C52EB7DE-A20F-40B2-B9D5-9A54E7D259BB}"
+              DTS:DTSID="{DA123781-A6D7-45A2-98C5-988CB3F52EB8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="DISTANCE"
-              DTS:DTSID="{AD836CD0-BCD0-4022-81FB-4AB2C627353D}"
+              DTS:DTSID="{3AF141C0-144F-41C5-B6A5-ADD595E7CA30}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WHEELS_ON"
-              DTS:DTSID="{12208FA9-2976-4096-93EC-7DE0F8D26473}"
+              DTS:DTSID="{8D6D64A4-F786-40F0-A944-EFCA4BF24C07}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +174,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="TAXI_IN"
-              DTS:DTSID="{3BAB0495-F3BC-4C70-A02F-19662FB84667}"
+              DTS:DTSID="{16CDD621-6303-47D3-A97B-5AE1BB500D96}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +183,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SCHEDULED_ARRIVAL"
-              DTS:DTSID="{5474B5B2-F370-48DF-B688-684A5237D71D}"
+              DTS:DTSID="{EF5B223B-1952-4986-B308-6AFAD3752F29}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +192,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ARRIVAL_TIME"
-              DTS:DTSID="{5CD45E48-4C26-4401-A4EA-ECDE927A1156}"
+              DTS:DTSID="{D2262BC9-6C4D-4965-8509-3C4889E4922B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -200,7 +200,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="ARRIVAL_DELAY"
-              DTS:DTSID="{209AD840-D257-4B11-BDEC-90D78E1EF590}"
+              DTS:DTSID="{A7CE6FDB-E82B-4246-84D9-FF8761598B0C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -208,7 +208,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="DIVERTED"
-              DTS:DTSID="{DB047E88-D107-4FF7-BB6D-0A822921E023}"
+              DTS:DTSID="{2EA89FB3-DAE5-4C2A-B656-9BDFB41D02D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +216,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CANCELLED"
-              DTS:DTSID="{01F945C7-6623-4BC9-A520-E25BFE242C14}"
+              DTS:DTSID="{84DAF770-770A-49C9-B073-19ED9B9506EF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -225,7 +225,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CANCELLATION_REASON"
-              DTS:DTSID="{B2498F41-DBE3-4853-95A1-7951DB2D3631}"
+              DTS:DTSID="{C508EA36-3C21-49C7-94DA-14222EEA4A86}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -233,7 +233,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="AIR_SYSTEM_DELAY"
-              DTS:DTSID="{968838DE-79EB-43BF-AA60-E02DC9D1D1CE}"
+              DTS:DTSID="{24D54A2E-40A0-43FF-B16B-7B03E2E718F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -241,7 +241,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="SECURITY_DELAY"
-              DTS:DTSID="{6C2383B5-B11A-4B4F-8D2A-65BD5E99CC98}"
+              DTS:DTSID="{5BB04FA3-5741-43AC-A81A-F38219A84957}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -249,7 +249,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRLINE_DELAY"
-              DTS:DTSID="{F6D4D5B7-8245-48E7-A87B-BD18037D5DAC}"
+              DTS:DTSID="{B5E2CCBD-0CAD-4BE5-9AEE-7D8F37526A38}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -257,7 +257,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="LATE_AIRCRAFT_DELAY"
-              DTS:DTSID="{D6C2525A-BE54-4EA9-B778-14BF81B36C50}"
+              DTS:DTSID="{351248B5-B500-414D-8256-5B30F5159A2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -265,7 +265,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="WEATHER_DELAY"
-              DTS:DTSID="{7C7EE75A-0030-48ED-A0C7-22B1F7774249}"
+              DTS:DTSID="{BA3F10FE-523A-4AF8-B6FB-CFE943234299}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -274,7 +274,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="CREATED"
-              DTS:DTSID="{1A8A7217-C2DB-4629-BA55-15ECD18492F6}"
+              DTS:DTSID="{27A721FE-2E57-4DA9-991D-ECE555D6C57D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -283,7 +283,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="MODIFIED"
-              DTS:DTSID="{F3F22F28-7A61-4ADF-A75F-412F66F96356}"
+              DTS:DTSID="{8068726A-D17B-4495-945D-ABBDE98D3F80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -292,7 +292,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Source"
-              DTS:DTSID="{8054877C-1AFB-48DF-84F4-3688382A2526}"
+              DTS:DTSID="{E09DFE4D-FBBD-40A2-ADCF-6FBE3FB8CB29}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -300,7 +300,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="Today"
-              DTS:DTSID="{0B758E87-B7C8-472B-8B2F-2263575E90CA}"
+              DTS:DTSID="{B82A5C42-4F7C-42D1-99EC-10F974336479}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -308,7 +308,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="SourceSK"
-              DTS:DTSID="{BCB0589E-0AF0-4FA4-BF43-025B03959FC2}"
+              DTS:DTSID="{F3F0E285-CE9D-4B51-98B4-D99B8E3EF13C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -316,7 +316,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{E58F1F56-6CD2-4F2F-A6A6-699D1B95AF8A}"
+              DTS:DTSID="{0BA59692-A221-4ABB-BB8D-E0BC52166536}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -324,7 +324,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{F5EE9C9E-6518-46E1-98AD-B1CA93A81500}"
+              DTS:DTSID="{70C271C1-8E1B-4F72-B0D8-66A006B2DC20}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -468,7 +468,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -616,13 +616,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Airlines]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Airlines]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Airlines]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Airlines]) [refTable]
 where [refTable].[AirlineNK] = ? and [refTable].[SourceSK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -791,13 +791,13 @@ where [refTable].[AirlineNK] = ? and [refTable].[SourceSK] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SourceSystem]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[SourceSystem]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SourceSystem]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[SourceSystem]) [refTable]
 where [refTable].[SourceName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -961,7 +961,7 @@ where [refTable].[SourceName] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IATA_CODE AS Expr1, AIRLINE AS Expr2, dbo.STG_Airlines.*
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT IATA_CODE AS Expr1, AIRLINE AS Expr2, dbo.STG_Airlines.*
 FROM   dbo.STG_Airlines</property>
                 <property
                   dataType="System.String"
@@ -1133,7 +1133,7 @@ FROM   dbo.STG_Airlines</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Airlines
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Airlines
 SET AirlineName = ?, UpdatedDate = ?
 WHERE AirlineSK = ?</property>
                 <property
@@ -1415,7 +1415,7 @@ WHERE AirlineSK = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1629,13 +1629,13 @@ WHERE AirlineSK = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Airports]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Airports]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Airports]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Airports]) [refTable]
 where [refTable].[AirportNK] = ? and [refTable].[SourceSK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1804,13 +1804,13 @@ where [refTable].[AirportNK] = ? and [refTable].[SourceSK] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SourceSystem]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[SourceSystem]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SourceSystem]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[SourceSystem]) [refTable]
 where [refTable].[SourceName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1974,7 +1974,7 @@ where [refTable].[SourceName] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT IATA_CODE, AIRLINE
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT IATA_CODE, AIRLINE
 FROM     dbo.STG_Airlines</property>
                 <property
                   dataType="System.String"
@@ -2215,7 +2215,7 @@ FROM     dbo.STG_Airlines</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Airports
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Airports
 SET AirportName = ?, City = ?, State = ?, Country = ?, Latitude = ?, Longitude = ?, UpdatedDate = ?
 WHERE AirportSK = ?</property>
                 <property
@@ -3235,7 +3235,7 @@ WHERE AirportSK = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3723,13 +3723,13 @@ WHERE AirportSK = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Airlines]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Airlines]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Airlines]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Airlines]) [refTable]
 where [refTable].[AirlineNK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -3766,7 +3766,7 @@ where [refTable].[AirlineNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\726:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1072:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3883,13 +3883,13 @@ where [refTable].[AirlineNK] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Airports]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Airports]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Airports]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Airports]) [refTable]
 where [refTable].[AirportNK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -3926,7 +3926,7 @@ where [refTable].[AirportNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\728:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1073:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4043,13 +4043,13 @@ where [refTable].[AirportNK] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Flights]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Flights]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Flights]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Flights]) [refTable]
 where [refTable].[FlightNumber] = ? and [refTable].[TailNumber] = ? and [refTable].[SourceSK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4234,13 +4234,13 @@ where [refTable].[FlightNumber] = ? and [refTable].[TailNumber] = ? and [refTabl
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Airports]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Airports]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Airports]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Airports]) [refTable]
 where [refTable].[AirportNK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4277,7 +4277,7 @@ where [refTable].[AirportNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\727:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1074:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4394,13 +4394,13 @@ where [refTable].[AirportNK] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SourceSystem]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[SourceSystem]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SourceSystem]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[SourceSystem]) [refTable]
 where [refTable].[SourceName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4553,13 +4553,13 @@ where [refTable].[SourceName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SourceSystem]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[SourceSystem]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SourceSystem]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[SourceSystem]) [refTable]
 where [refTable].[SourceName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -4712,13 +4712,13 @@ where [refTable].[SourceName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SourceSystem]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[SourceSystem]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SourceSystem]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[SourceSystem]) [refTable]
 where [refTable].[SourceName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -5109,7 +5109,7 @@ where [refTable].[SourceName] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -5812,7 +5812,7 @@ where [refTable].[SourceName] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -6515,7 +6515,7 @@ where [refTable].[SourceName] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8816,9 +8816,8 @@ where [refTable].[SourceName] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Flights
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.Flights
 SET
-    -- 1. Actual Times &amp; Metrics
     DepartureTime = ?,
     ArrivalTime = ?,
     WheelsOff = ?,
@@ -8830,27 +8829,24 @@ SET
     AirTime = ?,
     Distance = ?,
 
-    -- 2. Status
     Cancelled = ?,
     Diverted = ?,
     CancellationReason = ?,
 
-    -- 3. Delay Breakdown
     AirSystemDelay = ?,
     SecurityDelay = ?,
     AirlineDelay = ?,
     LateAircraftDelay = ?,
     WeatherDelay = ?,
 
-    -- 4. Scheduled Data (If source allows changes)
-    ScheduledDeparture = ?, -- Added
-    ScheduledArrival = ?,   -- Added
-    ScheduledTime = ?,      -- Added
+    ScheduledDeparture = ?,
+    ScheduledArrival = ?,   
+    ScheduledTime = ?,      
 
-    ElapsedTime = ?,  -- Added
+    ElapsedTime = ?, 
 
     UpdatedDate = ?,
-    SourceModifiedDate = ?  -- Added
+    SourceModifiedDate = ?  
 
 WHERE FlightSK = ?</property>
                 <property
@@ -9032,9 +9028,9 @@ WHERE FlightSK = ?</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="dbTime2"
-                      name="Param_0"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_0">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9044,9 +9040,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="dbTime2"
-                      name="Param_1"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_1">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9056,9 +9052,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="dbTime2"
-                      name="Param_2"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9068,9 +9064,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      dataType="dbTime2"
-                      name="Param_3"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_3">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9236,9 +9232,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      dataType="dbTime2"
-                      name="Param_18"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_18">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9248,9 +9244,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                      dataType="dbTime2"
-                      name="Param_19"
-                      scale="7">
+                      dataType="wstr"
+                      length="16"
+                      name="Param_19">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9282,9 +9278,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                      dataType="dbTimeStamp2"
-                      name="Param_22"
-                      scale="7">
+                      dataType="wstr"
+                      length="27"
+                      name="Param_22">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9294,9 +9290,9 @@ WHERE FlightSK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
-                      dataType="dbTimeStamp2"
-                      name="Param_23"
-                      scale="7">
+                      dataType="wstr"
+                      length="27"
+                      name="Param_23">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -9358,77 +9354,77 @@ WHERE FlightSK = ?</property>
               name="Derived Column Error Output"
               startId="Package\Load Flights\Parse TIME.Outputs[Derived Column Error Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output3]"
+              refId="Package\Load Flights.Paths[Derived Column Output]"
               endId="Package\Load Flights\Lookup Airlines.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output]"
+              refId="Package\Load Flights.Paths[Derived Column Output1]"
               endId="Package\Load Flights\Lookup Source 1.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Load Flights\Add Source Name 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output1]"
+              refId="Package\Load Flights.Paths[Derived Column Output2]"
               endId="Package\Load Flights\Lookup Source 2.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Load Flights\Add Source Name 2.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output2]"
+              refId="Package\Load Flights.Paths[Derived Column Output3]"
               endId="Package\Load Flights\Lookup Source 3.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Load Flights\Add Source Name 3.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output]"
-              endId="Package\Load Flights\Lookup Origin Airports.Inputs[Lookup Input]"
+              refId="Package\Load Flights.Paths[Lookup Match Output5]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output4]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output3]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Source 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output1]"
               endId="Package\Load Flights\Lookup Destination Airports.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output2]"
-              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
+              refId="Package\Load Flights.Paths[Lookup Match Output]"
+              endId="Package\Load Flights\Lookup Origin Airports.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output3]"
+              refId="Package\Load Flights.Paths[Lookup Match Output2]"
               endId="Package\Load Flights\Lookup NDS Flights.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output4]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 1]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 1.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output5]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\Load Flights.Paths[Lookup Match Output6]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
+              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup No Match Output]"
               endId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output1]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output]"
               endId="Package\Load Flights\Add Source Name 2.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 2.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output2]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output1]"
               endId="Package\Load Flights\Add Source Name 3.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 3.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output2]"
               endId="Package\Load Flights\Add Source Name 1.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 1.Outputs[OLE DB Source Output]" />
@@ -9473,15 +9469,15 @@ WHERE FlightSK = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.5,41.5"
+          Size="138.4,41.6"
           Id="Package\Load Airlines"
           TopLeft="258.472209127828,186.576606323484" />
         <NodeLayout
-          Size="140,41.5"
+          Size="140,41.6"
           Id="Package\Load Airports"
           TopLeft="461.805531351518,184.843273002204" />
         <NodeLayout
-          Size="135.5,41.5"
+          Size="135.2,41.6"
           Id="Package\Load Flights"
           TopLeft="365.972203254287,287.109938957722" />
         <EdgeLayout
@@ -9603,7 +9599,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9721,7 +9719,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9847,7 +9847,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9965,7 +9967,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10036,65 +10040,333 @@ WHERE FlightSK = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="141.5,41.5"
-          Id="Package\Load Flights\STG Flights 3"
-          TopLeft="635.999990522862,56.6000006705522" />
-        <NodeLayout
-          Size="156.5,41.5"
-          Id="Package\Load Flights\Lookup Source 2"
-          TopLeft="384.999994263053,246.999996319413" />
-        <NodeLayout
-          Size="173.5,41.5"
-          Id="Package\Load Flights\Update NDS Airlines"
-          TopLeft="518.499982314806,850.014282313841" />
-        <NodeLayout
-          Size="172,41.5"
-          Id="Package\Load Flights\Add Source Name 3"
-          TopLeft="621.999990731478,164.800002086163" />
-        <NodeLayout
-          Size="170.5,41.5"
-          Id="Package\Load Flights\Lookup NDS Flights"
-          TopLeft="370.166657086048,756.614282585042" />
-        <NodeLayout
-          Size="156.5,41.5"
-          Id="Package\Load Flights\Lookup Source 3"
-          TopLeft="628.999990627169,249.599997973442" />
-        <NodeLayout
-          Size="181.5,41.5"
-          Id="Package\Load Flights\Lookup Origin Airports"
-          TopLeft="374.99999448657,592.414282003897" />
-        <NodeLayout
-          Size="172,41.5"
-          Id="Package\Load Flights\Add Source Name 2"
-          TopLeft="380.999994322657,160.20000064075" />
-        <NodeLayout
-          Size="149.5,41.5"
-          Id="Package\Load Flights\Lookup Airlines"
-          TopLeft="386.999994307756,515.814281631368" />
-        <NodeLayout
-          Size="141.5,41.5"
-          Id="Package\Load Flights\STG Flights 1"
-          TopLeft="173.999997407198,59.9999991059303" />
-        <NodeLayout
-          Size="156.5,41.5"
-          Id="Package\Load Flights\Lookup Source 1"
-          TopLeft="160.999997600913,241.399996855855" />
-        <NodeLayout
-          Size="141.5,41.5"
+          Size="141.6,41.6"
           Id="Package\Load Flights\STG Flights 2"
           TopLeft="396.999994084239,56.6000006705522" />
         <NodeLayout
-          Size="172,41.5"
-          Id="Package\Load Flights\Add Source Name 1"
-          TopLeft="151.999997735023,159.599999135733" />
+          Size="156.8,41.6"
+          Id="Package\Load Flights\Lookup Source 2"
+          TopLeft="384.999994263053,246.999996319413" />
         <NodeLayout
-          Size="167.5,42"
+          Size="141.6,41.6"
+          Id="Package\Load Flights\STG Flights 3"
+          TopLeft="635.999990522862,56.6000006705522" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Flights\Lookup NDS Flights"
+          TopLeft="370.166657086048,756.614282585042" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Load Flights\Union All"
+          TopLeft="404.2,348" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Load Flights\Lookup Source 3"
+          TopLeft="628.999990627169,249.599997973442" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Load Flights\Add Source Name 3"
+          TopLeft="621.999990731478,164.800002086163" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load Flights\Lookup Airlines"
+          TopLeft="386.999994307756,515.814281631368" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Load Flights\Parse TIME"
+          TopLeft="396.428571428571,428.571428571429" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Load Flights\Add Source Name 2"
+          TopLeft="380.999994322657,160.20000064075" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Load Flights\Lookup Origin Airports"
+          TopLeft="374.99999448657,592.414282003897" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Load Flights\STG Flights 1"
+          TopLeft="173.999997407198,59.9999991059303" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Load Flights\Lookup Destination Airports"
+          TopLeft="355.999994769692,669.014282376426" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Load Flights\Update NDS Airlines"
+          TopLeft="519.928553746419,851.543694077206" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Load Flights\Lookup Source 1"
+          TopLeft="160.999997600913,241.399996855855" />
+        <NodeLayout
+          Size="167.2,41.6"
           Id="Package\Load Flights\Insert NDS Airlines"
           TopLeft="216.999996840954,855.414283378579" />
         <NodeLayout
-          Size="206.5,41.5"
-          Id="Package\Load Flights\Lookup Destination Airports"
-          TopLeft="355.999994769692,669.014282376426" />
+          Size="172,41.6"
+          Id="Package\Load Flights\Add Source Name 1"
+          TopLeft="151.999997735023,159.599999135733" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Load Flights\Flat File Destination"
+          TopLeft="682.857142857143,467.806722689746" />
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Union All Output 1]"
+          TopLeft="463.564285714286,390">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5714285714287"
+              Start="0,0"
+              End="0,31.0714285714287">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0714285714287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[OLE DB Source Output2]"
+          TopLeft="241.399997571111,101.59999910593">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0000000298023"
+              Start="0,0"
+              End="0,50.5000000298023">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5000000298023" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[OLE DB Source Output1]"
+          TopLeft="707.39999062717,98.2000006705522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.6000014156103"
+              Start="0,0"
+              End="0,59.1000014156103">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.1000014156103" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[OLE DB Source Output]"
+          TopLeft="467.399994203448,98.2000006705522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.9999999701976"
+              Start="0,0"
+              End="0,54.4999999701976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.4999999701976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup No Match Output]"
+          TopLeft="428.333323752715,798.114282585042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127.583326911761,57.300000793537"
+              Start="0,0"
+              End="-127.583326911761,49.800000793537">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2396284450255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2396284450255"
+                    Point2="0,23.2396284450255"
+                    Point3="-4,23.2396284450255" />
+                  <mssgle:LineSegment
+                    End="-123.583326911761,23.2396284450255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-123.583326911761,23.2396284450255"
+                    Point2="-127.583326911761,23.2396284450255"
+                    Point3="-127.583326911761,27.2396284450255" />
+                  <mssgle:LineSegment
+                    End="-127.583326911761,49.800000793537" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.59805017463,28.2396284450255,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output5]"
+          TopLeft="707.249990627169,291.099997973442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-214.674990627169,56.900002026558"
+              Start="0,0"
+              End="-214.674990627169,49.400002026558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1120446235466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.1120446235466"
+                    Point2="0,37.1120446235466"
+                    Point3="-4,37.1120446235466" />
+                  <mssgle:LineSegment
+                    End="-210.674990627169,37.1120446235466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-210.674990627169,37.1120446235466"
+                    Point2="-214.674990627169,37.1120446235466"
+                    Point3="-214.674990627169,41.1120446235466" />
+                  <mssgle:LineSegment
+                    End="-214.674990627169,49.400002026558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-155.528882032334,42.1120446235466,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output4]"
+          TopLeft="463.249994263053,288.499996319413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.9500057369471,59.500003680587"
+              Start="0,0"
+              End="19.9500057369471,52.000003680587">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2321889116007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2321889116007"
+                    Point2="0,35.2321889116007"
+                    Point3="4,35.2321889116007" />
+                  <mssgle:LineSegment
+                    End="15.9500057369471,35.2321889116007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9500057369471,35.2321889116007"
+                    Point2="19.9500057369471,35.2321889116007"
+                    Point3="19.9500057369471,39.2321889116007" />
+                  <mssgle:LineSegment
+                    End="19.9500057369471,52.000003680587" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.2163838502765,40.2321889116007,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output3]"
+          TopLeft="239.249997600913,282.899996855855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="225.200002399087,65.100003144145"
+              Start="0,0"
+              End="225.200002399087,57.600003144145">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5500015720725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5500015720725"
+                    Point2="0,32.5500015720725"
+                    Point3="4,32.5500015720725" />
+                  <mssgle:LineSegment
+                    End="221.200002399087,32.5500015720725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="221.200002399087,32.5500015720725"
+                    Point2="225.200002399087,32.5500015720725"
+                    Point3="225.200002399087,36.5500015720725" />
+                  <mssgle:LineSegment
+                    End="225.200002399087,57.600003144145" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="64.4086144807935,37.5500015720725,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output2]"
+          TopLeft="457.28332592787,710.614282376426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.0000002086164"
+              Start="0,0"
+              End="0,38.5000002086164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5000002086164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.4453126043082,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output1]"
           TopLeft="462.499994628131,634.014282003897">
@@ -10144,7 +10416,7 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output2]"
+          Id="Package\Load Flights.Paths[Derived Column Output3]"
           TopLeft="707.699990679323,206.400002086163">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10166,7 +10438,7 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output1]"
+          Id="Package\Load Flights.Paths[Derived Column Output2]"
           TopLeft="465.199994292855,201.80000064075">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10188,7 +10460,7 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output]"
+          Id="Package\Load Flights.Paths[Derived Column Output1]"
           TopLeft="238.699997667968,201.199999135733">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10210,307 +10482,7 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output2]"
-          TopLeft="707.39999062717,98.2000006705522">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.6000014156103"
-              Start="0,0"
-              End="0,59.1000014156103">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.1000014156103" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output1]"
-          TopLeft="467.399994203448,98.2000006705522">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.9999999701976"
-              Start="0,0"
-              End="0,54.4999999701976">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.4999999701976" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output]"
-          TopLeft="241.399997571111,101.59999910593">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58.0000000298023"
-              Start="0,0"
-              End="0,50.5000000298023">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5000000298023" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup No Match Output]"
-          TopLeft="428.333323752715,798.114282585042">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-127.583326911761,57.300000793537"
-              Start="0,0"
-              End="-127.583326911761,49.800000793537">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.2396284450255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.2396284450255"
-                    Point2="0,23.2396284450255"
-                    Point3="-4,23.2396284450255" />
-                  <mssgle:LineSegment
-                    End="-123.583326911761,23.2396284450255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-123.583326911761,23.2396284450255"
-                    Point2="-127.583326911761,23.2396284450255"
-                    Point3="-127.583326911761,27.2396284450255" />
-                  <mssgle:LineSegment
-                    End="-127.583326911761,49.800000793537" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-119.59805017463,28.2396284450255,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output3]"
-          TopLeft="457.28332592787,710.614282376426">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.0000002086164"
-              Start="0,0"
-              End="0,38.5000002086164">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5000002086164" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.4453126043082,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output2]"
-          TopLeft="455.366657086048,798.214282585042">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="149.933325228758,51.799999728799"
-              Start="0,0"
-              End="149.933325228758,44.299999728799">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8999998643995" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8999998643995"
-                    Point2="0,25.8999998643995"
-                    Point3="4,25.8999998643995" />
-                  <mssgle:LineSegment
-                    End="145.933325228758,25.8999998643995" />
-                  <mssgle:CubicBezierSegment
-                    Point1="145.933325228758,25.8999998643995"
-                    Point2="149.933325228758,25.8999998643995"
-                    Point3="149.933325228758,29.8999998643995" />
-                  <mssgle:LineSegment
-                    End="149.933325228758,44.299999728799" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="26.775275895629,30.8999998643995,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120.5,42"
-          Id="Package\Load Flights\Union All"
-          TopLeft="404.2,348" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output4]"
-          TopLeft="239.249997600913,282.899996855855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="225.200002399087,65.100003144145"
-              Start="0,0"
-              End="225.200002399087,57.600003144145">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5500015720725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5500015720725"
-                    Point2="0,32.5500015720725"
-                    Point3="4,32.5500015720725" />
-                  <mssgle:LineSegment
-                    End="221.200002399087,32.5500015720725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="221.200002399087,32.5500015720725"
-                    Point2="225.200002399087,32.5500015720725"
-                    Point3="225.200002399087,36.5500015720725" />
-                  <mssgle:LineSegment
-                    End="225.200002399087,57.600003144145" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="64.4086144807935,37.5500015720725,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output5]"
-          TopLeft="463.249994263053,288.499996319413">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.9500057369471,59.500003680587"
-              Start="0,0"
-              End="19.9500057369471,52.000003680587">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.2321889116007"
-                    Point2="0,35.2321889116007"
-                    Point3="4,35.2321889116007" />
-                  <mssgle:LineSegment
-                    End="15.9500057369471,35.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.9500057369471,35.2321889116007"
-                    Point2="19.9500057369471,35.2321889116007"
-                    Point3="19.9500057369471,39.2321889116007" />
-                  <mssgle:LineSegment
-                    End="19.9500057369471,52.000003680587" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.2163838502765,40.2321889116007,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output6]"
-          TopLeft="707.249990627169,291.099997973442">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-214.674990627169,56.900002026558"
-              Start="0,0"
-              End="-214.674990627169,49.400002026558">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.1120446235466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.1120446235466"
-                    Point2="0,37.1120446235466"
-                    Point3="-4,37.1120446235466" />
-                  <mssgle:LineSegment
-                    End="-210.674990627169,37.1120446235466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-210.674990627169,37.1120446235466"
-                    Point2="-214.674990627169,37.1120446235466"
-                    Point3="-214.674990627169,41.1120446235466" />
-                  <mssgle:LineSegment
-                    End="-214.674990627169,49.400002026558" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-155.528882032334,42.1120446235466,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="132.5,42"
-          Id="Package\Load Flights\Parse TIME"
-          TopLeft="396.428571428571,428.571428571429" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Union All Output 1]"
-          TopLeft="463.564285714286,390">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.5714285714287"
-              Start="0,0"
-              End="0,31.0714285714287">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.0714285714287" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output3]"
+          Id="Package\Load Flights.Paths[Derived Column Output]"
           TopLeft="462.214282868164,470.571428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10531,43 +10503,75 @@ WHERE FlightSK = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Load Flights\Flat File Destination"
-          TopLeft="682.857142857143,468.571428571429" />
         <EdgeLayout
           Id="Package\Load Flights.Paths[Derived Column Error Output]"
-          TopLeft="528.928571428571,449.571428571429">
+          TopLeft="529.228571428571,449.371428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="153.928571428572,39.9999999999999"
+              EndConnector="153.628571428572,39.2352941183174"
               Start="0,0"
-              End="146.428571428572,39.9999999999999">
+              End="146.128571428572,39.2352941183174">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="72.9642857142858,0" />
+                    End="72.814285714286,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="72.9642857142858,0"
-                    Point2="76.9642857142858,0"
-                    Point3="76.9642857142858,4" />
+                    Point1="72.814285714286,0"
+                    Point2="76.814285714286,0"
+                    Point3="76.814285714286,4" />
                   <mssgle:LineSegment
-                    End="76.9642857142858,35.9999999999999" />
+                    End="76.814285714286,35.2352941183174" />
                   <mssgle:CubicBezierSegment
-                    Point1="76.9642857142858,35.9999999999999"
-                    Point2="76.9642857142858,39.9999999999999"
-                    Point3="80.9642857142858,39.9999999999999" />
+                    Point1="76.814285714286,35.2352941183174"
+                    Point2="76.814285714286,39.2352941183174"
+                    Point3="80.814285714286,39.2352941183174" />
                   <mssgle:LineSegment
-                    End="146.428571428572,39.9999999999999" />
+                    End="146.128571428572,39.2352941183174" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="3.13424665178579,-22,147.660078125,16"
+              BoundingBox="11.852898995536,-17.609375,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output6]"
+          TopLeft="482.433323752715,798.214282585042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.895229993704,53.3294114921642"
+              Start="0,0"
+              End="123.895229993704,45.8294114921642">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6294171261243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6294171261243"
+                    Point2="0,21.6294171261243"
+                    Point3="4,21.6294171261243" />
+                  <mssgle:LineSegment
+                    End="119.895229993704,21.6294171261243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.895229993704,21.6294171261243"
+                    Point2="123.895229993704,21.6294171261243"
+                    Point3="123.895229993704,25.6294171261243" />
+                  <mssgle:LineSegment
+                    End="123.895229993704,45.8294114921642" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.7562282781019,26.6294171261243,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10575,7 +10579,7 @@ WHERE FlightSK = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\STG Flights 3">
+    design-time-name="Package\Load Flights\STG Flights 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10611,12 +10615,25 @@ WHERE FlightSK = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\STG Flights 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Flights\Lookup NDS Flights">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -10626,7 +10643,7 @@ WHERE FlightSK = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10640,29 +10657,6 @@ WHERE FlightSK = ?</property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
           type="q2:string">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Origin Airports">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Airports]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10690,20 +10684,7 @@ WHERE FlightSK = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\STG Flights 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Source 1">
+    design-time-name="Package\Load Flights\Lookup Origin Airports">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -10713,7 +10694,7 @@ WHERE FlightSK = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[SourceSystem]</Value>
+          type="q3:string">[dbo].[Airports]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -10726,20 +10707,7 @@ WHERE FlightSK = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\STG Flights 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Insert NDS Airlines">
+    design-time-name="Package\Load Flights\STG Flights 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10771,6 +10739,42 @@ WHERE FlightSK = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Lookup Source 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[SourceSystem]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Insert NDS Airlines">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
