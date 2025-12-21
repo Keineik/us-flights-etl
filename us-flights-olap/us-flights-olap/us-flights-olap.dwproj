@@ -35,6 +35,10 @@
       <Name>Dim Date.dim</Name>
       <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Flights.dim</Name>
+      <FullPath>Fact Flights.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

@@ -87,6 +87,11 @@ CREATE TABLE dbo.FactFlights (
     -- Identifiers
     FlightNumber        INT,
     TailNumber          VARCHAR(20),
+    
+    ScheduledDeparture  TIME,
+    DepartureTime       TIME,
+    ScheduledArrival    TIME,
+    ArrivalTime         TIME,
 
     -- Time Metrics (Float/Int values)
     DepartureDelay      FLOAT,

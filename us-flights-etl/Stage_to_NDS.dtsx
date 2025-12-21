@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{65A05195-899B-48E6-8C54-7CBEC3DF57CA}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{F19BC5B2-EAE9-46E2-97DA-50170AD18D51}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3514,14 +3514,14 @@ WHERE AirportSK = ?</property>
                       name="SourceSK" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp2"
-                      name="CreatedDate"
-                      scale="7" />
+                      dataType="wstr"
+                      length="27"
+                      name="CreatedDate" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp2"
-                      name="UpdatedDate"
-                      scale="7" />
+                      dataType="wstr"
+                      length="27"
+                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[FlightSK]"
                       dataType="i4"
@@ -3540,7 +3540,8 @@ WHERE AirportSK = ?</property>
                       name="DestAirportSK" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[FlightDate]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="FlightDate" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[FlightNumber]"
@@ -3554,24 +3555,24 @@ WHERE AirportSK = ?</property>
                       name="TailNumber" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[ScheduledDeparture]"
-                      dataType="dbTime2"
-                      name="ScheduledDeparture"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="ScheduledDeparture" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[DepartureTime]"
-                      dataType="dbTime2"
-                      name="DepartureTime"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="DepartureTime" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[ScheduledArrival]"
-                      dataType="dbTime2"
-                      name="ScheduledArrival"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="ScheduledArrival" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[ArrivalTime]"
-                      dataType="dbTime2"
-                      name="ArrivalTime"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="ArrivalTime" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[TaxiOut]"
                       dataType="r8"
@@ -3582,14 +3583,14 @@ WHERE AirportSK = ?</property>
                       name="TaxiIn" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[WheelsOff]"
-                      dataType="dbTime2"
-                      name="WheelsOff"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="WheelsOff" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[WheelsOn]"
-                      dataType="dbTime2"
-                      name="WheelsOn"
-                      scale="7" />
+                      dataType="wstr"
+                      length="16"
+                      name="WheelsOn" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[AirTime]"
                       dataType="r8"
@@ -3668,19 +3669,19 @@ WHERE AirportSK = ?</property>
                       name="ElapsedTime" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[SourceCreatedDate]"
-                      dataType="dbTimeStamp2"
-                      name="SourceCreatedDate"
-                      scale="7" />
+                      dataType="wstr"
+                      length="27"
+                      name="SourceCreatedDate" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[SourceModifiedDate]"
-                      dataType="dbTimeStamp2"
-                      name="SourceModifiedDate"
-                      scale="7" />
+                      dataType="wstr"
+                      length="27"
+                      name="SourceModifiedDate" />
                     <externalMetadataColumn
                       refId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp2"
-                      name="LoadDate"
-                      scale="7" />
+                      dataType="wstr"
+                      length="27"
+                      name="LoadDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3766,7 +3767,7 @@ where [refTable].[AirlineNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\1072:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1069:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3926,7 +3927,7 @@ where [refTable].[AirportNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\1073:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1070:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4277,7 +4278,7 @@ where [refTable].[AirportNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\1074:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1071:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9374,40 +9375,40 @@ WHERE FlightSK = ?</property>
               name="Derived Column Output"
               startId="Package\Load Flights\Add Source Name 3.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output5]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
+              refId="Package\Load Flights.Paths[Lookup Match Output6]"
+              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output5]"
+              endId="Package\Load Flights\Lookup NDS Flights.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output4]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
+              endId="Package\Load Flights\Lookup Origin Airports.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output3]"
+              endId="Package\Load Flights\Lookup Destination Airports.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output2]"
               endId="Package\Load Flights\Union All.Inputs[Union All Input 1]"
               name="Lookup Match Output"
               startId="Package\Load Flights\Lookup Source 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output1]"
-              endId="Package\Load Flights\Lookup Destination Airports.Inputs[Lookup Input]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output]"
-              endId="Package\Load Flights\Lookup Origin Airports.Inputs[Lookup Input]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output2]"
-              endId="Package\Load Flights\Lookup NDS Flights.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output6]"
-              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup No Match Output]"
               endId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input]"
@@ -10102,7 +10103,7 @@ WHERE FlightSK = ?</property>
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Load Flights\Insert NDS Airlines"
-          TopLeft="216.999996840954,855.414283378579" />
+          TopLeft="216.999996840954,854.649577496896" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\Load Flights\Add Source Name 1"
@@ -10201,114 +10202,150 @@ WHERE FlightSK = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup No Match Output]"
-          TopLeft="428.333323752715,798.114282585042">
+          TopLeft="428.299990419381,798.214282585042">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-127.583326911761,57.300000793537"
+              EndConnector="-127.699993578427,56.4352949118543"
               Start="0,0"
-              End="-127.583326911761,49.800000793537">
+              End="-127.699993578427,48.9352949118543">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2396284450255" />
+                    End="0,18.889105657273" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.2396284450255"
-                    Point2="0,23.2396284450255"
-                    Point3="-4,23.2396284450255" />
+                    Point1="0,18.889105657273"
+                    Point2="0,22.889105657273"
+                    Point3="-4,22.889105657273" />
                   <mssgle:LineSegment
-                    End="-123.583326911761,23.2396284450255" />
+                    End="-123.699993578427,22.889105657273" />
                   <mssgle:CubicBezierSegment
-                    Point1="-123.583326911761,23.2396284450255"
-                    Point2="-127.583326911761,23.2396284450255"
-                    Point3="-127.583326911761,27.2396284450255" />
+                    Point1="-123.699993578427,22.889105657273"
+                    Point2="-127.699993578427,22.889105657273"
+                    Point3="-127.699993578427,26.889105657273" />
                   <mssgle:LineSegment
-                    End="-127.583326911761,49.800000793537" />
+                    End="-127.699993578427,48.9352949118543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-119.59805017463,28.2396284450255,111.6127734375,11.609375"
+              BoundingBox="-119.656383507964,27.889105657273,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output6]"
+          TopLeft="482.433323752715,798.214282585042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.895229993704,53.3294114921642"
+              Start="0,0"
+              End="123.895229993704,45.8294114921642">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6294171261243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6294171261243"
+                    Point2="0,21.6294171261243"
+                    Point3="4,21.6294171261243" />
+                  <mssgle:LineSegment
+                    End="119.895229993704,21.6294171261243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.895229993704,21.6294171261243"
+                    Point2="123.895229993704,21.6294171261243"
+                    Point3="123.895229993704,25.6294171261243" />
+                  <mssgle:LineSegment
+                    End="123.895229993704,45.8294114921642" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.7562282781019,26.6294171261243,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output5]"
-          TopLeft="707.249990627169,291.099997973442">
+          TopLeft="457.28332592787,710.614282376426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-214.674990627169,56.900002026558"
+              EndConnector="0,46.0000002086164"
               Start="0,0"
-              End="-214.674990627169,49.400002026558">
+              End="0,38.5000002086164">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1120446235466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.1120446235466"
-                    Point2="0,37.1120446235466"
-                    Point3="-4,37.1120446235466" />
-                  <mssgle:LineSegment
-                    End="-210.674990627169,37.1120446235466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-210.674990627169,37.1120446235466"
-                    Point2="-214.674990627169,37.1120446235466"
-                    Point3="-214.674990627169,41.1120446235466" />
-                  <mssgle:LineSegment
-                    End="-214.674990627169,49.400002026558" />
+                    End="0,38.5000002086164" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-155.528882032334,42.1120446235466,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,13.4453126043082,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output4]"
-          TopLeft="463.249994263053,288.499996319413">
+          TopLeft="463.799994397163,557.414281631368">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.9500057369471,59.500003680587"
+              EndConnector="0,35.000000372529"
               Start="0,0"
-              End="19.9500057369471,52.000003680587">
+              End="0,27.500000372529">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.2321889116007"
-                    Point2="0,35.2321889116007"
-                    Point3="4,35.2321889116007" />
-                  <mssgle:LineSegment
-                    End="15.9500057369471,35.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.9500057369471,35.2321889116007"
-                    Point2="19.9500057369471,35.2321889116007"
-                    Point3="19.9500057369471,39.2321889116007" />
-                  <mssgle:LineSegment
-                    End="19.9500057369471,52.000003680587" />
+                    End="0,27.500000372529" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-38.2163838502765,40.2321889116007,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,7.94531268626451,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output3]"
+          TopLeft="462.499994628131,634.014282003897">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.000000372529"
+              Start="0,0"
+              End="0,27.500000372529">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.500000372529" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.94531268626451,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output2]"
           TopLeft="239.249997600913,282.899996855855">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10344,74 +10381,74 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output2]"
-          TopLeft="457.28332592787,710.614282376426">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.0000002086164"
-              Start="0,0"
-              End="0,38.5000002086164">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5000002086164" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.4453126043082,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output1]"
-          TopLeft="462.499994628131,634.014282003897">
+          TopLeft="463.249994263053,288.499996319413">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.000000372529"
+              EndConnector="19.9500057369471,59.500003680587"
               Start="0,0"
-              End="0,27.500000372529">
+              End="19.9500057369471,52.000003680587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.500000372529" />
+                    End="0,31.2321889116007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2321889116007"
+                    Point2="0,35.2321889116007"
+                    Point3="4,35.2321889116007" />
+                  <mssgle:LineSegment
+                    End="15.9500057369471,35.2321889116007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9500057369471,35.2321889116007"
+                    Point2="19.9500057369471,35.2321889116007"
+                    Point3="19.9500057369471,39.2321889116007" />
+                  <mssgle:LineSegment
+                    End="19.9500057369471,52.000003680587" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.94531268626451,96.3827734375,11.609375"
+              BoundingBox="-38.2163838502765,40.2321889116007,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output]"
-          TopLeft="463.799994397163,557.414281631368">
+          TopLeft="707.249990627169,291.099997973442">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.000000372529"
+              EndConnector="-214.674990627169,56.900002026558"
               Start="0,0"
-              End="0,27.500000372529">
+              End="-214.674990627169,49.400002026558">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.500000372529" />
+                    End="0,33.1120446235466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.1120446235466"
+                    Point2="0,37.1120446235466"
+                    Point3="-4,37.1120446235466" />
+                  <mssgle:LineSegment
+                    End="-210.674990627169,37.1120446235466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-210.674990627169,37.1120446235466"
+                    Point2="-214.674990627169,37.1120446235466"
+                    Point3="-214.674990627169,41.1120446235466" />
+                  <mssgle:LineSegment
+                    End="-214.674990627169,49.400002026558" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.94531268626451,96.3827734375,11.609375"
+              BoundingBox="-155.528882032334,42.1120446235466,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10536,42 +10573,6 @@ WHERE FlightSK = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="11.852898995536,-17.609375,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output6]"
-          TopLeft="482.433323752715,798.214282585042">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.895229993704,53.3294114921642"
-              Start="0,0"
-              End="123.895229993704,45.8294114921642">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.6294171261243" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6294171261243"
-                    Point2="0,21.6294171261243"
-                    Point3="4,21.6294171261243" />
-                  <mssgle:LineSegment
-                    End="119.895229993704,21.6294171261243" />
-                  <mssgle:CubicBezierSegment
-                    Point1="119.895229993704,21.6294171261243"
-                    Point2="123.895229993704,21.6294171261243"
-                    Point3="123.895229993704,25.6294171261243" />
-                  <mssgle:LineSegment
-                    End="123.895229993704,45.8294114921642" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="13.7562282781019,26.6294171261243,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
