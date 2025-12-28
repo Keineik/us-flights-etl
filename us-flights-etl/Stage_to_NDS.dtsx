@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{86281703-2D52-4168-AA52-430E3D803ED4}">
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{ED460E1A-9940-47A0-B01B-43859C3C1C6A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2870,6 +2870,348 @@ WHERE AirportSK = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Load Flights\Add Meta Ghost Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Meta Ghost Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Flights\Add Meta Ghost Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Inputs[Derived Column Input].Columns[SourceSK]"
+                      cachedDataType="i4"
+                      cachedName="SourceSK"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Flights\Add Meta Ghost Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_RuleID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_RuleID]"
+                      name="Audit_RuleID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">5</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Action]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Action]"
+                      name="Audit_Action"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Reject"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Reject"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="22"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Source]"
+                      name="Audit_Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"STG Flights " + (DT_WSTR,10)#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"STG Flights " + (DT_WSTR,10)SourceSK</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_LogID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_LogID]"
+                      name="Audit_LogID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::CurrentDQLogID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::CurrentDQLogID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Status]"
+                      name="Audit_Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Reject"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Reject"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Flights\Add Meta Ghost Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Flights\Add Meta Logic Error"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Meta Logic Error"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Flights\Add Meta Logic Error.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Inputs[Derived Column Input].Columns[SourceSK]"
+                      cachedDataType="i4"
+                      cachedName="SourceSK"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Flights\Add Meta Logic Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_RuleID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_RuleID]"
+                      name="Audit_RuleID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">4</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Action]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Action]"
+                      name="Audit_Action"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Reject"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Reject"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="22"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Source]"
+                      name="Audit_Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"STG Flights " + (DT_WSTR,10)#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"STG Flights " + (DT_WSTR,10)SourceSK</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_LogID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_LogID]"
+                      name="Audit_LogID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::CurrentDQLogID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::CurrentDQLogID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Status]"
+                      name="Audit_Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Reject"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Reject"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Flights\Add Meta Logic Error.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load Flights\Add Meta Reject"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2994,7 +3336,7 @@ WHERE AirportSK = ?</property>
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="7"
+                      length="6"
                       lineageId="Package\Load Flights\Add Meta Reject.Outputs[Derived Column Output].Columns[Audit_Status]"
                       name="Audit_Status"
                       truncationRowDisposition="FailComponent">
@@ -3003,13 +3345,13 @@ WHERE AirportSK = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"Pending"</property>
+                          name="Expression">"Reject"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"Pending"</property>
+                          name="FriendlyExpression">"Reject"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3432,6 +3774,28 @@ WHERE AirportSK = ?</property>
                       cachedDataType="i4"
                       cachedName="AirlineSK"
                       lineageId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output].Columns[AirlineSK]" />
+                    <inputColumn
+                      refId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input].Columns[DEPARTURE_TIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DEPARTURE_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]" />
+                    <inputColumn
+                      refId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input].Columns[ELAPSED_TIME]"
+                      cachedDataType="r8"
+                      cachedName="ELAPSED_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ELAPSED_TIME]" />
+                    <inputColumn
+                      refId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input].Columns[AIR_TIME]"
+                      cachedDataType="r8"
+                      cachedName="AIR_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_TIME]" />
+                    <inputColumn
+                      refId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input].Columns[CANCELLED]"
+                      cachedDataType="i4"
+                      cachedName="CANCELLED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLED]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3518,6 +3882,62 @@ WHERE AirportSK = ?</property>
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
                       name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Flights\DQ Router.Outputs[DQ_Logic_Error]"
+                  description="Output 4 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DQ_Logic_Error"
+                  synchronousInputId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_TIME]}) &amp;&amp; ![ISNULL](#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ELAPSED_TIME]}) &amp;&amp; #{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_TIME]} &gt; #{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ELAPSED_TIME]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(AIR_TIME) &amp;&amp; !ISNULL(ELAPSED_TIME) &amp;&amp; AIR_TIME &gt; ELAPSED_TIME</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">3</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Flights\DQ Router.Outputs[DQ_Ghost_Data]"
+                  description="Output 5 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DQ_Ghost_Data"
+                  synchronousInputId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLED]}) &amp;&amp; #{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLED]} == 0 &amp;&amp; [ISNULL](#{Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(CANCELLED) &amp;&amp; CANCELLED == 0 &amp;&amp; ISNULL(DEPARTURE_TIME)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">4</property>
                   </properties>
                   <externalMetadataColumns />
                 </output>
@@ -5104,7 +5524,7 @@ where [refTable].[FlightNumber] = ? and [refTable].[TailNumber] = ? and [refTabl
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Flights\2484:invalid};#{Package\Load Flights\2487:invalid};#{Package\Load Flights\2574:invalid};</property>
+                  name="ParameterMap">#{Package\Load Flights\1762:invalid};#{Package\Load Flights\1763:invalid};#{Package\Load Flights\1764:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10457,7 +10877,7 @@ where [refTable].[SourceName] = ?</property>
                     <inputColumn
                       refId="Package\Load Flights\Union All 1.Inputs[Union All Input 1].Columns[Audit_Status]"
                       cachedDataType="wstr"
-                      cachedLength="7"
+                      cachedLength="6"
                       cachedName="Audit_Status"
                       lineageId="Package\Load Flights\Add Meta Reject.Outputs[Derived Column Output].Columns[Audit_Status]">
                       <properties>
@@ -11769,9 +12189,1305 @@ where [refTable].[SourceName] = ?</property>
                 </input>
                 <input
                   refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4]"
-                  dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 4">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DATE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[AIRLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="AIRLINE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIRLINE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIRLINE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[FLIGHT_NUMBER]"
+                      cachedDataType="i4"
+                      cachedName="FLIGHT_NUMBER"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[FLIGHT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[FLIGHT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[TAIL_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="TAIL_NUMBER"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAIL_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAIL_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ORIGIN_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ORIGIN_AIRPORT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ORIGIN_AIRPORT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ORIGIN_AIRPORT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DESTINATION_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DESTINATION_AIRPORT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DESTINATION_AIRPORT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DESTINATION_AIRPORT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[SCHEDULED_DEPARTURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SCHEDULED_DEPARTURE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_DEPARTURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_DEPARTURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DEPARTURE_TIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DEPARTURE_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DEPARTURE_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="DEPARTURE_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DEPARTURE_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[TAXI_OUT]"
+                      cachedDataType="r8"
+                      cachedName="TAXI_OUT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAXI_OUT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAXI_OUT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[WHEELS_OFF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="WHEELS_OFF"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WHEELS_OFF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WHEELS_OFF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[SCHEDULED_TIME]"
+                      cachedDataType="r8"
+                      cachedName="SCHEDULED_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ELAPSED_TIME]"
+                      cachedDataType="r8"
+                      cachedName="ELAPSED_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ELAPSED_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ELAPSED_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[AIR_TIME]"
+                      cachedDataType="r8"
+                      cachedName="AIR_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIR_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DISTANCE]"
+                      cachedDataType="r8"
+                      cachedName="DISTANCE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DISTANCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DISTANCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[WHEELS_ON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="WHEELS_ON"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WHEELS_ON]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WHEELS_ON]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[TAXI_IN]"
+                      cachedDataType="r8"
+                      cachedName="TAXI_IN"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAXI_IN]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAXI_IN]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[SCHEDULED_ARRIVAL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SCHEDULED_ARRIVAL"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_ARRIVAL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_ARRIVAL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ARRIVAL_TIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ARRIVAL_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ARRIVAL_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ARRIVAL_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ARRIVAL_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="ARRIVAL_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ARRIVAL_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ARRIVAL_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DIVERTED]"
+                      cachedDataType="i4"
+                      cachedName="DIVERTED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DIVERTED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DIVERTED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[CANCELLED]"
+                      cachedDataType="i4"
+                      cachedName="CANCELLED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CANCELLED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[CANCELLATION_REASON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="CANCELLATION_REASON"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLATION_REASON]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CANCELLATION_REASON]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[AIR_SYSTEM_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="AIR_SYSTEM_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_SYSTEM_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIR_SYSTEM_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[SECURITY_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="SECURITY_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SECURITY_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SECURITY_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[AIRLINE_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="AIRLINE_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIRLINE_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIRLINE_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[LATE_AIRCRAFT_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="LATE_AIRCRAFT_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[LATE_AIRCRAFT_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[LATE_AIRCRAFT_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[WEATHER_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="WEATHER_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WEATHER_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WEATHER_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[CREATED]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CREATED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CREATED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CREATED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[MODIFIED]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="MODIFIED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[MODIFIED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[MODIFIED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Source"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Source]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Today]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Today"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[Today]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Today]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[SourceSK]"
+                      cachedDataType="i4"
+                      cachedName="SourceSK"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SourceSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ScheduledDeparture]"
+                      cachedDataType="dbTime"
+                      cachedName="ScheduledDeparture"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ScheduledDeparture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ScheduledDeparture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DepartureTime]"
+                      cachedDataType="dbTime"
+                      cachedName="DepartureTime"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[DepartureTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DepartureTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ScheduledArrival]"
+                      cachedDataType="dbTime"
+                      cachedName="ScheduledArrival"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ScheduledArrival]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ScheduledArrival]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[ArrivalTime]"
+                      cachedDataType="dbTime"
+                      cachedName="ArrivalTime"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ArrivalTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ArrivalTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[WheelsOff]"
+                      cachedDataType="dbTime"
+                      cachedName="WheelsOff"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[WheelsOff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WheelsOff]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[WheelsOn]"
+                      cachedDataType="dbTime"
+                      cachedName="WheelsOn"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[WheelsOn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WheelsOn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[AirlineSK]"
+                      cachedDataType="i4"
+                      cachedName="AirlineSK"
+                      lineageId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output].Columns[AirlineSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AirlineSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[OrgAirportSK]"
+                      cachedDataType="i4"
+                      cachedName="OrgAirportSK"
+                      lineageId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output].Columns[OrgAirportSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[OrgAirportSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[DestAirportSK]"
+                      cachedDataType="i4"
+                      cachedName="DestAirportSK"
+                      lineageId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output].Columns[DestAirportSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DestAirportSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Audit_RuleID]"
+                      cachedDataType="i4"
+                      cachedName="Audit_RuleID"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_RuleID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_RuleID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Audit_Action]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Audit_Action"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Action]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Action]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Audit_Source]"
+                      cachedDataType="wstr"
+                      cachedLength="22"
+                      cachedName="Audit_Source"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Source]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Audit_LogID]"
+                      cachedDataType="i4"
+                      cachedName="Audit_LogID"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_LogID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_LogID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 4].Columns[Audit_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Audit_Status"
+                      lineageId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output].Columns[Audit_Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Status]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5]"
+                  hasSideEffects="true"
+                  name="Union All Input 5">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DATE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DATE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DATE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[AIRLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="AIRLINE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIRLINE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIRLINE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[FLIGHT_NUMBER]"
+                      cachedDataType="i4"
+                      cachedName="FLIGHT_NUMBER"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[FLIGHT_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[FLIGHT_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[TAIL_NUMBER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="TAIL_NUMBER"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAIL_NUMBER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAIL_NUMBER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ORIGIN_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ORIGIN_AIRPORT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ORIGIN_AIRPORT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ORIGIN_AIRPORT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DESTINATION_AIRPORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DESTINATION_AIRPORT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DESTINATION_AIRPORT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DESTINATION_AIRPORT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[SCHEDULED_DEPARTURE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SCHEDULED_DEPARTURE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_DEPARTURE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_DEPARTURE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DEPARTURE_TIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DEPARTURE_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DEPARTURE_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DEPARTURE_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="DEPARTURE_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DEPARTURE_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DEPARTURE_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[TAXI_OUT]"
+                      cachedDataType="r8"
+                      cachedName="TAXI_OUT"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAXI_OUT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAXI_OUT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[WHEELS_OFF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="WHEELS_OFF"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WHEELS_OFF]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WHEELS_OFF]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[SCHEDULED_TIME]"
+                      cachedDataType="r8"
+                      cachedName="SCHEDULED_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ELAPSED_TIME]"
+                      cachedDataType="r8"
+                      cachedName="ELAPSED_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ELAPSED_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ELAPSED_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[AIR_TIME]"
+                      cachedDataType="r8"
+                      cachedName="AIR_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIR_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DISTANCE]"
+                      cachedDataType="r8"
+                      cachedName="DISTANCE"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DISTANCE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DISTANCE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[WHEELS_ON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="WHEELS_ON"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WHEELS_ON]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WHEELS_ON]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[TAXI_IN]"
+                      cachedDataType="r8"
+                      cachedName="TAXI_IN"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[TAXI_IN]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[TAXI_IN]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[SCHEDULED_ARRIVAL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SCHEDULED_ARRIVAL"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SCHEDULED_ARRIVAL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SCHEDULED_ARRIVAL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ARRIVAL_TIME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ARRIVAL_TIME"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ARRIVAL_TIME]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ARRIVAL_TIME]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ARRIVAL_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="ARRIVAL_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[ARRIVAL_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ARRIVAL_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DIVERTED]"
+                      cachedDataType="i4"
+                      cachedName="DIVERTED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[DIVERTED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DIVERTED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[CANCELLED]"
+                      cachedDataType="i4"
+                      cachedName="CANCELLED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CANCELLED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[CANCELLATION_REASON]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="CANCELLATION_REASON"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CANCELLATION_REASON]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CANCELLATION_REASON]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[AIR_SYSTEM_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="AIR_SYSTEM_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIR_SYSTEM_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIR_SYSTEM_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[SECURITY_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="SECURITY_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SECURITY_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SECURITY_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[AIRLINE_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="AIRLINE_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[AIRLINE_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AIRLINE_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[LATE_AIRCRAFT_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="LATE_AIRCRAFT_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[LATE_AIRCRAFT_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[LATE_AIRCRAFT_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[WEATHER_DELAY]"
+                      cachedDataType="r8"
+                      cachedName="WEATHER_DELAY"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[WEATHER_DELAY]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WEATHER_DELAY]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[CREATED]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CREATED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[CREATED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[CREATED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[MODIFIED]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="MODIFIED"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[MODIFIED]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[MODIFIED]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Source"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Source]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Today]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Today"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[Today]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Today]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[SourceSK]"
+                      cachedDataType="i4"
+                      cachedName="SourceSK"
+                      lineageId="Package\Load Flights\Union All.Outputs[Union All Output 1].Columns[SourceSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[SourceSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ScheduledDeparture]"
+                      cachedDataType="dbTime"
+                      cachedName="ScheduledDeparture"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ScheduledDeparture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ScheduledDeparture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DepartureTime]"
+                      cachedDataType="dbTime"
+                      cachedName="DepartureTime"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[DepartureTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DepartureTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ScheduledArrival]"
+                      cachedDataType="dbTime"
+                      cachedName="ScheduledArrival"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ScheduledArrival]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ScheduledArrival]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[ArrivalTime]"
+                      cachedDataType="dbTime"
+                      cachedName="ArrivalTime"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[ArrivalTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[ArrivalTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[WheelsOff]"
+                      cachedDataType="dbTime"
+                      cachedName="WheelsOff"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[WheelsOff]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WheelsOff]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[WheelsOn]"
+                      cachedDataType="dbTime"
+                      cachedName="WheelsOn"
+                      lineageId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output].Columns[WheelsOn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[WheelsOn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[AirlineSK]"
+                      cachedDataType="i4"
+                      cachedName="AirlineSK"
+                      lineageId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output].Columns[AirlineSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[AirlineSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[OrgAirportSK]"
+                      cachedDataType="i4"
+                      cachedName="OrgAirportSK"
+                      lineageId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output].Columns[OrgAirportSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[OrgAirportSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[DestAirportSK]"
+                      cachedDataType="i4"
+                      cachedName="DestAirportSK"
+                      lineageId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output].Columns[DestAirportSK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[DestAirportSK]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Audit_RuleID]"
+                      cachedDataType="i4"
+                      cachedName="Audit_RuleID"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_RuleID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_RuleID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Audit_Action]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Audit_Action"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Action]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Action]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Audit_Source]"
+                      cachedDataType="wstr"
+                      cachedLength="22"
+                      cachedName="Audit_Source"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Source]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Audit_LogID]"
+                      cachedDataType="i4"
+                      cachedName="Audit_LogID"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_LogID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_LogID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Flights\Union All 1.Inputs[Union All Input 5].Columns[Audit_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Audit_Status"
+                      lineageId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output].Columns[Audit_Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load Flights\Union All 1.Outputs[Union All Output 1].Columns[Audit_Status]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Flights\Union All 1.Inputs[Union All Input 6]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 6">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -14026,45 +15742,55 @@ WHERE FlightSK = ?</property>
               name="Derived Column Output"
               startId="Package\Load Flights\Parse TIME.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output1]"
-              endId="Package\Load Flights\Lookup Source 1.Inputs[Lookup Input]"
+              refId="Package\Load Flights.Paths[Derived Column Output9]"
+              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 4]"
               name="Derived Column Output"
-              startId="Package\Load Flights\Add Source Name 1.Outputs[Derived Column Output]" />
+              startId="Package\Load Flights\Add Meta Logic Error.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output2]"
-              endId="Package\Load Flights\Lookup Source 2.Inputs[Lookup Input]"
+              refId="Package\Load Flights.Paths[Derived Column Output8]"
+              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 3]"
               name="Derived Column Output"
-              startId="Package\Load Flights\Add Source Name 2.Outputs[Derived Column Output]" />
+              startId="Package\Load Flights\Add Meta Allow.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Derived Column Output7]"
+              endId="Package\Load Flights\Union All 2.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Load Flights\Handle Null Delay.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Derived Column Output6]"
+              endId="Package\Load Flights\Union All 2.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Load Flights\Fix Negative Distance.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Derived Column Output10]"
+              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 5]"
+              name="Derived Column Output"
+              startId="Package\Load Flights\Add Meta Ghost Data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Derived Column Output4]"
+              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Load Flights\Add Meta Fix.Outputs[Derived Column Output]" />
             <path
               refId="Package\Load Flights.Paths[Derived Column Output3]"
               endId="Package\Load Flights\Lookup Source 3.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Load Flights\Add Source Name 3.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output7]"
-              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 2]"
+              refId="Package\Load Flights.Paths[Derived Column Output2]"
+              endId="Package\Load Flights\Lookup Source 2.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Load Flights\Add Meta Fix.Outputs[Derived Column Output]" />
+              startId="Package\Load Flights\Add Source Name 2.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Load Flights.Paths[Derived Column Output6]"
+              refId="Package\Load Flights.Paths[Derived Column Output1]"
+              endId="Package\Load Flights\Lookup Source 1.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Load Flights\Add Source Name 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Derived Column Output5]"
               endId="Package\Load Flights\Union All 1.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Load Flights\Add Meta Reject.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Derived Column Output5]"
-              endId="Package\Load Flights\Union All 2.Inputs[Union All Input 2]"
-              name="Derived Column Output"
-              startId="Package\Load Flights\Fix Negative Distance.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Derived Column Output4]"
-              endId="Package\Load Flights\Union All 2.Inputs[Union All Input 1]"
-              name="Derived Column Output"
-              startId="Package\Load Flights\Handle Null Delay.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Derived Column Output8]"
-              endId="Package\Load Flights\Union All 1.Inputs[Union All Input 3]"
-              name="Derived Column Output"
-              startId="Package\Load Flights\Add Meta Allow.Outputs[Derived Column Output]" />
             <path
               refId="Package\Load Flights.Paths[DQ_Allow_Delay]"
               endId="Package\Load Flights\Broadcast Allow Rows.Inputs[Multicast Input 1]"
@@ -14076,45 +15802,55 @@ WHERE FlightSK = ?</property>
               name="DQ_Fix_Dist"
               startId="Package\Load Flights\DQ Router.Outputs[DQ_Fix_Dist]" />
             <path
+              refId="Package\Load Flights.Paths[DQ_Ghost_Data]"
+              endId="Package\Load Flights\Add Meta Ghost Data.Inputs[Derived Column Input]"
+              name="DQ_Ghost_Data"
+              startId="Package\Load Flights\DQ Router.Outputs[DQ_Ghost_Data]" />
+            <path
+              refId="Package\Load Flights.Paths[DQ_Logic_Error]"
+              endId="Package\Load Flights\Add Meta Logic Error.Inputs[Derived Column Input]"
+              name="DQ_Logic_Error"
+              startId="Package\Load Flights\DQ Router.Outputs[DQ_Logic_Error]" />
+            <path
               refId="Package\Load Flights.Paths[DQ_Reject]"
               endId="Package\Load Flights\Add Meta Reject.Inputs[Derived Column Input]"
               name="DQ_Reject"
               startId="Package\Load Flights\DQ Router.Outputs[DQ_Reject]" />
             <path
-              refId="Package\Load Flights.Paths[Lookup Match Output]"
-              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
+              refId="Package\Load Flights.Paths[Lookup Match Output6]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 1]"
               name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
+              startId="Package\Load Flights\Lookup Source 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output4]"
+              endId="Package\Load Flights\Lookup Destination Airports.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output3]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load Flights.Paths[Lookup Match Output2]"
+              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup Match Output1]"
               endId="Package\Load Flights\Lookup Origin Airports.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Load Flights\Lookup Airlines.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Load Flights.Paths[Lookup Match Output]"
+              endId="Package\Load Flights\Update NDS Airlines.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Load Flights\Lookup NDS Flights.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Load Flights.Paths[Lookup Match Output5]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 3]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 3.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output4]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 2]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output2]"
-              endId="Package\Load Flights\Lookup Destination Airports.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Origin Airports.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output6]"
               endId="Package\Load Flights\DQ Router.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Load Flights\Lookup Destination Airports.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Load Flights.Paths[Lookup Match Output3]"
-              endId="Package\Load Flights\Union All.Inputs[Union All Input 1]"
-              name="Lookup Match Output"
-              startId="Package\Load Flights\Lookup Source 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load Flights.Paths[Lookup No Match Output]"
               endId="Package\Load Flights\Insert NDS Airlines.Inputs[OLE DB Destination Input]"
@@ -14131,37 +15867,37 @@ WHERE FlightSK = ?</property>
               name="Multicast Output 1"
               startId="Package\Load Flights\Broadcast Allow Rows.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\Load Flights.Paths[Multicast Output 21]"
+              refId="Package\Load Flights.Paths[Multicast Output 2]"
               endId="Package\Load Flights\Handle Null Delay.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\Load Flights\Broadcast Allow Rows.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Load Flights.Paths[Multicast Output 2]"
+              refId="Package\Load Flights.Paths[Multicast Output 21]"
               endId="Package\Load Flights\Add Meta Fix.Inputs[Derived Column Input]"
               name="Multicast Output 2"
               startId="Package\Load Flights\BroadCast Fix Rows.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output2]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output]"
               endId="Package\Load Flights\Add Source Name 1.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 1.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output1]"
               endId="Package\Load Flights\Add Source Name 2.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 2.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Flights.Paths[OLE DB Source Output1]"
+              refId="Package\Load Flights.Paths[OLE DB Source Output2]"
               endId="Package\Load Flights\Add Source Name 3.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Flights\STG Flights 3.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Flights.Paths[Union All Output 11]"
+              refId="Package\Load Flights.Paths[Union All Output 1]"
               endId="Package\Load Flights\Lookup NDS Flights.Inputs[Lookup Input]"
               name="Union All Output 1"
               startId="Package\Load Flights\Union All 2.Outputs[Union All Output 1]" />
             <path
-              refId="Package\Load Flights.Paths[Union All Output 1]"
+              refId="Package\Load Flights.Paths[Union All Output 11]"
               endId="Package\Load Flights\Parse TIME.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Load Flights\Union All.Outputs[Union All Output 1]" />
@@ -14382,7 +16118,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14500,7 +16238,9 @@ WHERE FlightSK = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14819,76 +16559,142 @@ WHERE FlightSK = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="141.5,41.5"
-          Id="Package\Load Flights\STG Flights 3"
-          TopLeft="635.999990522862,56.6000006705522" />
-        <NodeLayout
-          Size="170.5,41.5"
-          Id="Package\Load Flights\Lookup NDS Flights"
-          TopLeft="737.999990419381,1177.53094925171" />
-        <NodeLayout
-          Size="141.5,41.5"
-          Id="Package\Load Flights\STG Flights 2"
-          TopLeft="396.999994084239,56.6000006705522" />
-        <NodeLayout
-          Size="172,41.5"
-          Id="Package\Load Flights\Add Source Name 3"
-          TopLeft="621.999990731478,164.800002086163" />
-        <NodeLayout
           Size="157,41.5"
-          Id="Package\Load Flights\Lookup Source 3"
-          TopLeft="628.999990627169,249.599997973442" />
-        <NodeLayout
-          Size="181.5,41.5"
-          Id="Package\Load Flights\Lookup Origin Airports"
-          TopLeft="374.99999448657,592.414282003897" />
-        <NodeLayout
-          Size="121,41.5"
-          Id="Package\Load Flights\Union All"
-          TopLeft="404.2,348" />
-        <NodeLayout
-          Size="149.5,41.5"
-          Id="Package\Load Flights\Lookup Airlines"
-          TopLeft="386.999994307756,515.814281631368" />
+          Id="Package\Load Flights\Lookup Source 1"
+          TopLeft="289.571426172341,244.733330189188" />
         <NodeLayout
           Size="172,41.5"
           Id="Package\Load Flights\Add Source Name 2"
-          TopLeft="380.999994322657,160.20000064075" />
-        <NodeLayout
-          Size="133,41.5"
-          Id="Package\Load Flights\Parse TIME"
-          TopLeft="396.428571428571,428.571428571429" />
-        <NodeLayout
-          Size="157,41.5"
-          Id="Package\Load Flights\Lookup Source 1"
-          TopLeft="160.999997600913,241.399996855855" />
-        <NodeLayout
-          Size="141.5,41.5"
-          Id="Package\Load Flights\STG Flights 1"
-          TopLeft="173.999997407198,59.9999991059303" />
-        <NodeLayout
-          Size="206.5,41.5"
-          Id="Package\Load Flights\Lookup Destination Airports"
-          TopLeft="355.999994769692,669.014282376426" />
+          TopLeft="514.571422894085,160.82500064075" />
         <NodeLayout
           Size="173.5,42"
           Id="Package\Load Flights\Update NDS Airlines"
-          TopLeft="872.345220413086,1294.12702741054" />
+          TopLeft="1015.91664898451,1294.12702741054" />
+        <NodeLayout
+          Size="133,41.5"
+          Id="Package\Load Flights\Parse TIME"
+          TopLeft="539.999999999999,428.571428571429" />
         <NodeLayout
           Size="172,41.5"
           Id="Package\Load Flights\Add Source Name 1"
-          TopLeft="151.999997735023,159.599999135733" />
+          TopLeft="287.238092973118,158.349999135733" />
+        <NodeLayout
+          Size="149.5,41.5"
+          Id="Package\Load Flights\Lookup Airlines"
+          TopLeft="530.571422879184,515.814281631368" />
         <NodeLayout
           Size="167.5,42"
           Id="Package\Load Flights\Insert NDS Airlines"
-          TopLeft="620.249996840954,1279.31624416356" />
+          TopLeft="768.964282555239,1295.1733870207" />
+        <NodeLayout
+          Size="121,41.5"
+          Id="Package\Load Flights\Union All"
+          TopLeft="547.771428571428,348" />
+        <NodeLayout
+          Size="181.5,41.5"
+          Id="Package\Load Flights\Lookup Origin Airports"
+          TopLeft="518.571423057998,592.414282003897" />
+        <NodeLayout
+          Size="162.5,42"
+          Id="Package\Load Flights\Handle Null Delay"
+          TopLeft="1317.5,899.880952380952" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Load Flights\Fix Negative Distance"
+          TopLeft="883.571428571428,888.125" />
+        <NodeLayout
+          Size="185.5,42"
+          Id="Package\Load Flights\DQ_Audit_STG_Flights"
+          TopLeft="496.585317460317,1077.08333333333" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Flights\Add Meta Reject"
+          TopLeft="269.099206349206,886.361111111111" />
+        <NodeLayout
+          Size="157,41.5"
+          Id="Package\Load Flights\Lookup Source 3"
+          TopLeft="772.571419198597,249.599997973442" />
+        <NodeLayout
+          Size="141.5,41.5"
+          Id="Package\Load Flights\STG Flights 3"
+          TopLeft="779.57141909429,56.6000006705522" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load Flights\BroadCast Fix Rows"
+          TopLeft="772.071428571428,827.458333333333" />
+        <NodeLayout
+          Size="130,45"
+          Id="Package\Load Flights\Union All 1"
+          TopLeft="516.904761904761,981.666666666667" />
+        <NodeLayout
+          Size="170.5,41.5"
+          Id="Package\Load Flights\Lookup NDS Flights"
+          TopLeft="881.571418990809,1177.53094925171" />
+        <NodeLayout
+          Size="141.5,41.5"
+          Id="Package\Load Flights\STG Flights 2"
+          TopLeft="533.696422655667,54.7250006705522" />
+        <NodeLayout
+          Size="128.5,42"
+          Id="Package\Load Flights\DQ Router"
+          TopLeft="542.849206349206,741.055555555556" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load Flights\Add Meta Fix"
+          TopLeft="511.279761904762,877.916666666667" />
         <NodeLayout
           Size="157,41.5"
           Id="Package\Load Flights\Lookup Source 2"
-          TopLeft="384.999994263053,246.999996319413" />
+          TopLeft="523.988089501148,246.16666298608" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Load Flights\Broadcast Allow Rows"
+          TopLeft="1119.00793650794,820.47619047619" />
+        <NodeLayout
+          Size="141.5,41.5"
+          Id="Package\Load Flights\STG Flights 1"
+          TopLeft="297.571425978626,58.1249991059303" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load Flights\Union All 2"
+          TopLeft="934.935064935064,1032.72727272727" />
+        <NodeLayout
+          Size="206.5,41.5"
+          Id="Package\Load Flights\Lookup Destination Airports"
+          TopLeft="499.57142334112,669.014282376426" />
+        <NodeLayout
+          Size="172,41.5"
+          Id="Package\Load Flights\Add Source Name 3"
+          TopLeft="765.571419302906,164.800002086163" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load Flights\Add Meta Allow"
+          TopLeft="1137.46031746032,889.444444444445" />
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Union All Output 1]"
-          TopLeft="463.564285714286,390">
+          Id="Package\Load Flights.Paths[Union All Output 12]"
+          TopLeft="585.620039682539,1026.66666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.4166666666636"
+              Start="0,0"
+              End="0,42.9166666666636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9166666666636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Union All Output 11]"
+          TopLeft="607.135714285714,390">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14909,19 +16715,31 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output2]"
-          TopLeft="241.399997571111,101.59999910593">
+          Id="Package\Load Flights.Paths[Union All Output 1]"
+          TopLeft="999.935064935064,1074.72727272727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.0000000298023"
+              EndConnector="-33.1136459442549,102.803676524436"
               Start="0,0"
-              End="0,50.5000000298023">
+              End="-33.1136459442549,95.303676524436">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5000000298023" />
+                    End="0,47.401838262218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.401838262218"
+                    Point2="0,51.401838262218"
+                    Point3="-4,51.401838262218" />
+                  <mssgle:LineSegment
+                    End="-29.1136459442549,51.401838262218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.1136459442549,51.401838262218"
+                    Point2="-33.1136459442549,51.401838262218"
+                    Point3="-33.1136459442549,55.401838262218" />
+                  <mssgle:LineSegment
+                    End="-33.1136459442549,95.303676524436" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14931,8 +16749,8 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output1]"
-          TopLeft="707.39999062717,98.2000006705522">
+          Id="Package\Load Flights.Paths[OLE DB Source Output2]"
+          TopLeft="850.971419198598,98.2000006705522">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -14953,19 +16771,19 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[OLE DB Source Output]"
-          TopLeft="467.399994203448,98.2000006705522">
+          Id="Package\Load Flights.Paths[OLE DB Source Output1]"
+          TopLeft="602.508922774876,96.2250006705522">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.9999999701976"
+              EndConnector="0,64.5999999701978"
               Start="0,0"
-              End="0,54.4999999701976">
+              End="0,57.0999999701978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.4999999701976" />
+                    End="0,57.0999999701978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14975,8 +16793,292 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Load Flights.Paths[OLE DB Source Output]"
+          TopLeft="370.779759475872,99.6249991059303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.7250000298027"
+              Start="0,0"
+              End="0,51.2250000298027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.2250000298027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Multicast Output 21]"
+          TopLeft="772.071428571428,848.458333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.791666666666,50.4583333333335"
+              Start="0,0"
+              End="-113.291666666666,50.4583333333335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-56.3958333333331,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.3958333333331,0"
+                    Point2="-60.3958333333331,0"
+                    Point3="-60.3958333333331,4" />
+                  <mssgle:LineSegment
+                    End="-60.3958333333331,46.4583333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.3958333333331,46.4583333333335"
+                    Point2="-60.3958333333331,50.4583333333335"
+                    Point3="-64.3958333333331,50.4583333333335" />
+                  <mssgle:LineSegment
+                    End="-113.291666666666,50.4583333333335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Multicast Output 2]"
+          TopLeft="1239.00793650794,862.47619047619">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.742063492064,37.4047619047619"
+              Start="0,0"
+              End="159.742063492064,29.9047619047619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.1574852163088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.1574852163088"
+                    Point2="0,15.1574852163088"
+                    Point3="4,15.1574852163088" />
+                  <mssgle:LineSegment
+                    End="155.742063492064,15.1574852163088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155.742063492064,15.1574852163088"
+                    Point2="159.742063492064,15.1574852163088"
+                    Point3="159.742063492064,19.1574852163088" />
+                  <mssgle:LineSegment
+                    End="159.742063492064,29.9047619047619" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Multicast Output 11]"
+          TopLeft="1211.73412698413,862.47619047619">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.9682539682541"
+              Start="0,0"
+              End="0,19.4682539682541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4682539682541" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Multicast Output 1]"
+          TopLeft="944.071428571428,848.458333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.5,39.6666666666667"
+              Start="0,0"
+              End="29.5,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5,0"
+                    Point2="29.5,0"
+                    Point3="29.5,4" />
+                  <mssgle:LineSegment
+                    End="29.5,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup No Match Output]"
+          TopLeft="939.738085657476,1219.03094925171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.0238031022365,76.142437768993"
+              Start="0,0"
+              End="-87.0238031022365,68.642437768993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8817092171744" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8817092171744"
+                    Point2="0,30.8817092171744"
+                    Point3="-4,30.8817092171744" />
+                  <mssgle:LineSegment
+                    End="-83.0238031022365,30.8817092171744" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.0238031022365,30.8817092171744"
+                    Point2="-87.0238031022365,30.8817092171744"
+                    Point3="-87.0238031022365,34.8817092171744" />
+                  <mssgle:LineSegment
+                    End="-87.0238031022365,68.642437768993" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.3182882698682,35.8817092171744,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output6]"
+          TopLeft="368.071426172341,286.233330189188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="211.950002399087,61.7666698108117"
+              Start="0,0"
+              End="211.950002399087,54.2666698108117">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.2898493105564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.2898493105564"
+                    Point2="0,40.2898493105564"
+                    Point3="4,40.2898493105564" />
+                  <mssgle:LineSegment
+                    End="207.950002399087,40.2898493105564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="207.950002399087,40.2898493105564"
+                    Point2="211.950002399087,40.2898493105564"
+                    Point3="211.950002399087,44.2898493105564" />
+                  <mssgle:LineSegment
+                    End="211.950002399087,54.2666698108117" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.7836144807933,45.2898493105564,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output5]"
-          TopLeft="707.249990627169,291.099997973442">
+          TopLeft="604.960314845163,710.514282376426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5412731791296"
+              Start="0,0"
+              End="0,23.0412731791296">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0412731791296" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.71594908956479,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output4]"
+          TopLeft="606.071423199559,634.014282003897">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.000000372529"
+              Start="0,0"
+              End="0,27.500000372529">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.500000372529" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.9453126862645,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output3]"
+          TopLeft="605.379759036288,287.66666298608">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.3333370139204"
+              Start="0,0"
+              End="0,52.8333370139204">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8333370139204" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.6119810069602,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Lookup Match Output2]"
+          TopLeft="850.821419198597,291.099997973442">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15011,104 +17113,8 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output4]"
-          TopLeft="463.249994263053,288.499996319413">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.9500057369471,59.500003680587"
-              Start="0,0"
-              End="19.9500057369471,52.000003680587">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.2321889116007"
-                    Point2="0,35.2321889116007"
-                    Point3="4,35.2321889116007" />
-                  <mssgle:LineSegment
-                    End="15.9500057369471,35.2321889116007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.9500057369471,35.2321889116007"
-                    Point2="19.9500057369471,35.2321889116007"
-                    Point3="19.9500057369471,39.2321889116007" />
-                  <mssgle:LineSegment
-                    End="19.9500057369471,52.000003680587" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.2163838502765,40.2321889116007,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output3]"
-          TopLeft="239.249997600913,282.899996855855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="225.200002399087,65.100003144145"
-              Start="0,0"
-              End="225.200002399087,57.600003144145">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5500015720725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5500015720725"
-                    Point2="0,32.5500015720725"
-                    Point3="4,32.5500015720725" />
-                  <mssgle:LineSegment
-                    End="221.200002399087,32.5500015720725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="221.200002399087,32.5500015720725"
-                    Point2="225.200002399087,32.5500015720725"
-                    Point3="225.200002399087,36.5500015720725" />
-                  <mssgle:LineSegment
-                    End="225.200002399087,57.600003144145" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="64.4086144807935,37.5500015720725,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output2]"
-          TopLeft="462.499994628131,634.014282003897">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.000000372529"
-              Start="0,0"
-              End="0,27.500000372529">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.500000372529" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.9453126862645,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output1]"
-          TopLeft="463.799994397163,557.414281631368">
+          TopLeft="607.371422968591,557.414281631368">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15132,7 +17138,7 @@ WHERE FlightSK = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Flights.Paths[Lookup Match Output]"
-          TopLeft="850.333323752715,1219.03094925171">
+          TopLeft="993.904752324143,1219.03094925171">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15167,347 +17173,139 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output3]"
-          TopLeft="707.699990679323,206.400002086163">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.1999958872795"
-              Start="0,0"
-              End="0,35.6999958872795">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.6999958872795" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output2]"
-          TopLeft="465.199994292855,201.80000064075">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.1999956786633"
-              Start="0,0"
-              End="0,37.6999956786633">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.6999956786633" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output1]"
-          TopLeft="238.699997667968,201.199999135733">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.1999977201225"
-              Start="0,0"
-              End="0,32.6999977201225">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.6999977201225" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output]"
-          TopLeft="462.214282868164,470.571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.242853059939"
-              Start="0,0"
-              End="0,37.742853059939">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.742853059939" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128.5,42"
-          Id="Package\Load Flights\DQ Router"
-          TopLeft="401.5,755.5" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Load Flights\Add Meta Reject"
-          TopLeft="109.416666666667,880.25" />
-        <EdgeLayout
           Id="Package\Load Flights.Paths[DQ_Reject]"
-          TopLeft="435.625,797.5">
+          TopLeft="607.099206349206,783.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-248.208333333333,82.75"
+              EndConnector="-259.999999999999,103.305555555556"
               Start="0,0"
-              End="-248.208333333333,75.25">
+              End="-259.999999999999,95.8055555555557">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.7048919949174" />
+                    End="0,47.6527777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.7048919949174"
-                    Point2="0,28.7048919949174"
-                    Point3="-4,28.7048919949174" />
+                    Point1="0,47.6527777777778"
+                    Point2="0,51.6527777777778"
+                    Point3="-4,51.6527777777778" />
                   <mssgle:LineSegment
-                    End="-244.208333333333,28.7048919949174" />
+                    End="-255.999999999999,51.6527777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="-244.208333333333,28.7048919949174"
-                    Point2="-248.208333333333,28.7048919949174"
-                    Point3="-248.208333333333,32.7048919949174" />
+                    Point1="-255.999999999999,51.6527777777778"
+                    Point2="-259.999999999999,51.6527777777778"
+                    Point3="-259.999999999999,55.6527777777778" />
                   <mssgle:LineSegment
-                    End="-248.208333333333,75.25" />
+                    End="-259.999999999999,95.8055555555557" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-148.140553385417,33.7048919949174,48.0727734375,11.4873046875"
+              BoundingBox="-154.03638671875,56.6527777777778,48.0727734375,11.4873046875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185.5,42"
-          Id="Package\Load Flights\DQ_Audit_STG_Flights"
-          TopLeft="353.013888888889,1077.08333333333" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Load Flights\BroadCast Fix Rows"
-          TopLeft="628.5,827.458333333333" />
         <EdgeLayout
           Id="Package\Load Flights.Paths[DQ_Fix_Dist]"
-          TopLeft="465.75,797.5">
+          TopLeft="627.182539682539,783.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="248.75,29.9583333333333"
+              EndConnector="230.888888888889,44.4027777777775"
               Start="0,0"
-              End="248.75,22.4583333333333">
+              End="230.888888888889,36.9027777777775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.9791666666666" />
+                    End="0,14.0887565120846" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.9791666666666"
-                    Point2="0,14.9791666666666"
-                    Point3="4,14.9791666666666" />
+                    Point1="0,14.0887565120846"
+                    Point2="0,18.0887565120846"
+                    Point3="4,18.0887565120846" />
                   <mssgle:LineSegment
-                    End="244.75,14.9791666666666" />
+                    End="226.888888888889,18.0887565120846" />
                   <mssgle:CubicBezierSegment
-                    Point1="244.75,14.9791666666666"
-                    Point2="248.75,14.9791666666666"
-                    Point3="248.75,18.9791666666666" />
+                    Point1="226.888888888889,18.0887565120846"
+                    Point2="230.888888888889,18.0887565120846"
+                    Point3="230.888888888889,22.0887565120846" />
                   <mssgle:LineSegment
-                    End="248.75,22.4583333333333" />
+                    End="230.888888888889,36.9027777777775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="96.69861328125,19.9791666666666,55.3527734375,11.3359375"
+              BoundingBox="87.7680577256945,23.0887565120846,55.3527734375,11.3359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Load Flights\Add Meta Fix"
-          TopLeft="367.708333333334,877.916666666667" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Multicast Output 2]"
-          TopLeft="628.5,848.458333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120.791666666666,50.4583333333335"
-              Start="0,0"
-              End="-113.291666666666,50.4583333333335">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-56.3958333333331,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56.3958333333331,0"
-                    Point2="-60.3958333333331,0"
-                    Point3="-60.3958333333331,4" />
-                  <mssgle:LineSegment
-                    End="-60.3958333333331,46.4583333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-60.3958333333331,46.4583333333335"
-                    Point2="-60.3958333333331,50.4583333333335"
-                    Point3="-64.3958333333331,50.4583333333335" />
-                  <mssgle:LineSegment
-                    End="-113.291666666666,50.4583333333335" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Load Flights\Fix Negative Distance"
-          TopLeft="740,888.125" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Multicast Output 1]"
-          TopLeft="800.5,848.458333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.5,39.6666666666667"
-              Start="0,0"
-              End="29.5,32.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.5,0"
-                    Point2="29.5,0"
-                    Point3="29.5,4" />
-                  <mssgle:LineSegment
-                    End="29.5,32.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Load Flights\Broadcast Allow Rows"
-          TopLeft="975.436507936508,820.47619047619" />
         <EdgeLayout
           Id="Package\Load Flights.Paths[DQ_Allow_Delay]"
-          TopLeft="495.875,797.5">
+          TopLeft="647.265873015872,783.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="570.561507936508,22.9761904761905"
+              EndConnector="562.742063492066,37.4206349206345"
               Start="0,0"
-              End="570.561507936508,15.4761904761905">
+              End="562.742063492066,29.9206349206345">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,3.97013977128336" />
+                    End="0,6.20241838873904" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,3.97013977128336"
-                    Point2="0,7.97013977128336"
-                    Point3="4,7.97013977128336" />
+                    Point1="0,6.20241838873904"
+                    Point2="0,10.202418388739"
+                    Point3="4,10.202418388739" />
                   <mssgle:LineSegment
-                    End="566.561507936508,7.97013977128336" />
+                    End="558.742063492066,10.202418388739" />
                   <mssgle:CubicBezierSegment
-                    Point1="566.561507936508,7.97013977128336"
-                    Point2="570.561507936508,7.97013977128336"
-                    Point3="570.561507936508,11.9701397712834" />
+                    Point1="558.742063492066,10.202418388739"
+                    Point2="562.742063492066,10.202418388739"
+                    Point3="562.742063492066,14.202418388739" />
                   <mssgle:LineSegment
-                    End="570.561507936508,15.4761904761905" />
+                    End="562.742063492066,29.9206349206345" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="248.278820374504,12.9701397712834,74.0038671875,11.609375"
+              BoundingBox="244.369098152283,15.202418388739,74.0038671875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Load Flights\Add Meta Allow"
-          TopLeft="993.888888888889,889.444444444445" />
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Multicast Output 11]"
-          TopLeft="1068.1626984127,862.47619047619">
+          Id="Package\Load Flights.Paths[Derived Column Output8]"
+          TopLeft="1213.46031746032,931.444444444445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.9682539682541"
+              EndConnector="-594.955555555558,50.2222222222215"
               Start="0,0"
-              End="0,19.4682539682541">
+              End="-594.955555555558,42.7222222222215">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4682539682541" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.5,42"
-          Id="Package\Load Flights\Handle Null Delay"
-          TopLeft="1173.92857142857,899.880952380952" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Multicast Output 21]"
-          TopLeft="1095.43650793651,862.47619047619">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159.742063492064,37.4047619047619"
-              Start="0,0"
-              End="159.742063492064,29.9047619047619">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.1574852163088" />
+                    End="0,30.9512253152505" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.1574852163088"
-                    Point2="0,15.1574852163088"
-                    Point3="4,15.1574852163088" />
+                    Point1="0,30.9512253152505"
+                    Point2="0,34.9512253152505"
+                    Point3="-4,34.9512253152505" />
                   <mssgle:LineSegment
-                    End="155.742063492064,15.1574852163088" />
+                    End="-590.955555555558,34.9512253152505" />
                   <mssgle:CubicBezierSegment
-                    Point1="155.742063492064,15.1574852163088"
-                    Point2="159.742063492064,15.1574852163088"
-                    Point3="159.742063492064,19.1574852163088" />
+                    Point1="-590.955555555558,34.9512253152505"
+                    Point2="-594.955555555558,34.9512253152505"
+                    Point3="-594.955555555558,38.9512253152505" />
                   <mssgle:LineSegment
-                    End="159.742063492064,29.9047619047619" />
+                    End="-594.955555555558,42.7222222222215" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15517,72 +17315,8 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup No Match Output]"
-          TopLeft="796.166657086048,1219.03094925171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-92.166660245094,60.285294911854"
-              Start="0,0"
-              End="-92.166660245094,52.785294911854">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4503985174166" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4503985174166"
-                    Point2="0,24.4503985174166"
-                    Point3="-4,24.4503985174166" />
-                  <mssgle:LineSegment
-                    End="-88.166660245094,24.4503985174166" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-88.166660245094,24.4503985174166"
-                    Point2="-92.166660245094,24.4503985174166"
-                    Point3="-92.166660245094,28.4503985174166" />
-                  <mssgle:LineSegment
-                    End="-92.166660245094,52.785294911854" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-101.889716841297,29.4503985174166,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Lookup Match Output6]"
-          TopLeft="462.499997384846,710.514282376426">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.985717623574"
-              Start="0,0"
-              End="0,37.485717623574">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.485717623574" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.938171311787,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load Flights\Union All 2"
-          TopLeft="791.363636363636,1032.72727272727" />
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output4]"
-          TopLeft="1255.17857142857,941.880952380952">
+          Id="Package\Load Flights.Paths[Derived Column Output7]"
+          TopLeft="1398.75,941.880952380952">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15615,8 +17349,8 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output5]"
-          TopLeft="833.015151515152,930.125">
+          Id="Package\Load Flights.Paths[Derived Column Output6]"
+          TopLeft="976.58658008658,930.125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15637,31 +17371,153 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Union All Output 11]"
-          TopLeft="856.363636363636,1074.72727272727">
+          Id="Package\Load Flights.Paths[Derived Column Output5]"
+          TopLeft="347.099206349206,928.361111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.1136459442549,102.803676524436"
+              EndConnector="222.605555555555,53.3055555555553"
               Start="0,0"
-              End="-33.1136459442549,95.303676524436">
+              End="222.605555555555,45.8055555555553">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.401838262218" />
+                    End="0,25.4130824372759" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.401838262218"
-                    Point2="0,51.401838262218"
-                    Point3="-4,51.401838262218" />
+                    Point1="0,25.4130824372759"
+                    Point2="0,29.4130824372759"
+                    Point3="4,29.4130824372759" />
                   <mssgle:LineSegment
-                    End="-29.1136459442549,51.401838262218" />
+                    End="218.605555555555,29.4130824372759" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29.1136459442549,51.401838262218"
-                    Point2="-33.1136459442549,51.401838262218"
-                    Point3="-33.1136459442549,55.401838262218" />
+                    Point1="218.605555555555,29.4130824372759"
+                    Point2="222.605555555555,29.4130824372759"
+                    Point3="222.605555555555,33.4130824372759" />
                   <mssgle:LineSegment
-                    End="-33.1136459442549,95.303676524436" />
+                    End="222.605555555555,45.8055555555553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output4]"
+          TopLeft="581.279761904762,919.916666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.8249999999994,61.7499999999995"
+              Start="0,0"
+              End="12.8249999999994,54.2499999999995">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0725806451611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0725806451611"
+                    Point2="0,34.0725806451611"
+                    Point3="4,34.0725806451611" />
+                  <mssgle:LineSegment
+                    End="8.82499999999936,34.0725806451611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.82499999999936,34.0725806451611"
+                    Point2="12.8249999999994,34.0725806451611"
+                    Point3="12.8249999999994,38.0725806451611" />
+                  <mssgle:LineSegment
+                    End="12.8249999999994,54.2499999999995" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output3]"
+          TopLeft="851.271419250751,206.400002086163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.1999958872795"
+              Start="0,0"
+              End="0,35.6999958872795">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.6999958872795" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output2]"
+          TopLeft="601.529756197616,202.32500064075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.8416623453296"
+              Start="0,0"
+              End="0,36.3416623453296">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3416623453296" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output1]"
+          TopLeft="370.65475957273,199.849999135733">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8833310534553"
+              Start="0,0"
+              End="0,37.3833310534553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3833310534553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output]"
+          TopLeft="605.785711439592,470.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.242853059939"
+              Start="0,0"
+              End="0,37.742853059939">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.742853059939" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15671,35 +17527,71 @@ WHERE FlightSK = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="130,45"
-          Id="Package\Load Flights\Union All 1"
-          TopLeft="371.111111111111,976.111111111111" />
+          Size="178,42"
+          Id="Package\Load Flights\Add Meta Logic Error"
+          TopLeft="0.396825396825463,890.714285714286" />
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output6]"
-          TopLeft="187.416666666667,922.25">
+          Id="Package\Load Flights.Paths[DQ_Logic_Error]"
+          TopLeft="566.932539682539,783.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="218.194444444444,53.8611111111113"
+              EndConnector="-477.535714285714,107.65873015873"
               Start="0,0"
-              End="218.194444444444,46.3611111111113">
+              End="-477.535714285714,100.15873015873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.1856504745953" />
+                    End="0,25.3522386942198" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.1856504745953"
-                    Point2="0,35.1856504745953"
-                    Point3="4,35.1856504745953" />
+                    Point1="0,25.3522386942198"
+                    Point2="0,29.3522386942198"
+                    Point3="-4,29.3522386942198" />
                   <mssgle:LineSegment
-                    End="214.194444444444,35.1856504745953" />
+                    End="-473.535714285714,29.3522386942198" />
                   <mssgle:CubicBezierSegment
-                    Point1="214.194444444444,35.1856504745953"
-                    Point2="218.194444444444,35.1856504745953"
-                    Point3="218.194444444444,39.1856504745953" />
+                    Point1="-473.535714285714,29.3522386942198"
+                    Point2="-477.535714285714,29.3522386942198"
+                    Point3="-477.535714285714,33.3522386942198" />
                   <mssgle:LineSegment
-                    End="218.194444444444,46.3611111111113" />
+                    End="-477.535714285714,100.15873015873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-274.106548549107,34.3522386942198,70.6773828125,11.4873046875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Flights.Paths[Derived Column Output9]"
+          TopLeft="89.3968253968255,932.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="455.907936507936,48.9523809523808"
+              Start="0,0"
+              End="455.907936507936,41.4523809523808">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0675028041194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0675028041194"
+                    Point2="0,34.0675028041194"
+                    Point3="4,34.0675028041194" />
+                  <mssgle:LineSegment
+                    End="451.907936507936,34.0675028041194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="451.907936507936,34.0675028041194"
+                    Point2="455.907936507936,34.0675028041194"
+                    Point3="455.907936507936,38.0675028041194" />
+                  <mssgle:LineSegment
+                    End="455.907936507936,41.4523809523808" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15708,88 +17600,60 @@ WHERE FlightSK = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="179.5,42"
+          Id="Package\Load Flights\Add Meta Ghost Data"
+          TopLeft="122.460317460317,986.825396825397" />
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output7]"
-          TopLeft="436.909722222222,919.916666666667">
+          Id="Package\Load Flights.Paths[DQ_Ghost_Data]"
+          TopLeft="587.015873015872,783.055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.1944444444446"
+              EndConnector="-374.805555555555,203.769841269842"
               Start="0,0"
-              End="0,48.6944444444446">
+              End="-374.805555555555,196.269841269842">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.6944444444446" />
+                    End="0,79.0115417932482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.0115417932482"
+                    Point2="0,83.0115417932482"
+                    Point3="-4,83.0115417932482" />
+                  <mssgle:LineSegment
+                    End="-370.805555555555,83.0115417932482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-370.805555555555,83.0115417932482"
+                    Point2="-374.805555555555,83.0115417932482"
+                    Point3="-374.805555555555,87.0115417932482" />
+                  <mssgle:LineSegment
+                    End="-374.805555555555,196.269841269842" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-223.161137152777,88.0115417932482,71.51671875,11.51171875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Flights.Paths[Derived Column Output8]"
-          TopLeft="1069.88888888889,931.444444444445">
+          Id="Package\Load Flights.Paths[Derived Column Output10]"
+          TopLeft="301.960317460317,1005.99603174603">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-603.277777777778,44.6666666666667"
+              EndConnector="214.944444444444,0"
               Start="0,0"
-              End="-603.277777777778,37.1666666666667">
+              End="207.444444444444,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.1792294807371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.1792294807371"
-                    Point2="0,29.1792294807371"
-                    Point3="-4,29.1792294807371" />
-                  <mssgle:LineSegment
-                    End="-599.277777777778,29.1792294807371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-599.277777777778,29.1792294807371"
-                    Point2="-603.277777777778,29.1792294807371"
-                    Point3="-603.277777777778,33.1792294807371" />
-                  <mssgle:LineSegment
-                    End="-603.277777777778,37.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Flights.Paths[Union All Output 12]"
-          TopLeft="436.111111111111,1021.11111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.65277777777766,55.9722222222226"
-              Start="0,0"
-              End="9.65277777777766,48.4722222222226">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9861111111113" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9861111111113"
-                    Point2="0,27.9861111111113"
-                    Point3="4,27.9861111111113" />
-                  <mssgle:LineSegment
-                    End="5.65277777777766,27.9861111111113" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.65277777777766,27.9861111111113"
-                    Point2="9.65277777777766,27.9861111111113"
-                    Point3="9.65277777777766,31.9861111111113" />
-                  <mssgle:LineSegment
-                    End="9.65277777777766,48.4722222222226" />
+                    End="207.444444444444,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15802,76 +17666,17 @@ WHERE FlightSK = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\STG Flights 3">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup NDS Flights">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Flights]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\STG Flights 2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Source 3">
+    design-time-name="Package\Load Flights\Lookup Source 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
           type="q2:string">false</Value>
       </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Origin Airports">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Airports]</Value>
+          type="q3:string">[dbo].[SourceSystem]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -15907,7 +17712,115 @@ WHERE FlightSK = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Source 1">
+    design-time-name="Package\Load Flights\Insert NDS Airlines">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Lookup Origin Airports">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Airports]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\DQ_Audit_STG_Flights">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Lookup Source 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\STG Flights 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Lookup NDS Flights">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Flights]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\STG Flights 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Flights\Lookup Source 2">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -15948,7 +17861,7 @@ WHERE FlightSK = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15958,59 +17871,10 @@ WHERE FlightSK = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Insert NDS Airlines">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\Lookup Source 2">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[SourceSystem]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
           type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Flights\DQ_Audit_STG_Flights">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

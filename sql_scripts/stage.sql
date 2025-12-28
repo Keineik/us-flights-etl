@@ -139,4 +139,5 @@ CREATE TABLE dbo.STG_Flights_3 (
 )
 
 
-select * from STG_Flights_3
+select * from STG_Flights_1
+select * from STG_Airports

@@ -133,5 +133,5 @@ CREATE TABLE dbo.Flights (
 GO
 
 select * from Flights
-
+SELECT * FROM Airlines
 SELECT * FROM Airports

@@ -127,3 +127,5 @@ CREATE TABLE dbo.FactFlights (
     CONSTRAINT FK_Fact_CancelReason FOREIGN KEY (CancelReasonSK) REFERENCES dbo.DimCancelReason(CancelReasonSK),
 );
 GO
+
+select * from FactFlights
