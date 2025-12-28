@@ -270,11 +270,32 @@ VALUES
  '[AIR_TIME] > [ELAPSED_TIME]', 'Data_Stewards'),
 
 -- 5. Chuyến bay Ma (Không Cancel mà lại không có giờ bay)
-('Logic_Ghost_Flight', 
- 'Flight is not Cancelled but Departure Time is missing.', 
- 'STG_Flights_1', 'DEPARTURE_TIME', 
- 'Error', 'Validity', 5, 'Reject', 
- '[CANCELLED] == 0 && ISNULL([DEPARTURE_TIME])', 'ETL_Admins');
+('Logic_Ghost_Flight',
+ 'Flight is not Cancelled but Departure Time is missing.',
+ 'STG_Flights_1', 'DEPARTURE_TIME',
+ 'Error', 'Validity', 5, 'Reject',
+ '[CANCELLED] == 0 && ISNULL([DEPARTURE_TIME])', 'ETL_Admins'),
+
+-- 6. Airlines: Missing or empty IATA code
+('Missing_Airline_Code',
+ 'Airline IATA code cannot be NULL or empty.',
+ 'STG_Airlines', 'IATA_CODE',
+ 'Error', 'Incoming', 5, 'Reject',
+ 'ISNULL([IATA_CODE]) || TRIM([IATA_CODE]) == ""', 'ETL_Admins'),
+
+-- 7. Airports: Missing or empty IATA code
+('Missing_Airport_Code',
+ 'Airport IATA code cannot be NULL or empty.',
+ 'STG_Airports', 'IATA_CODE',
+ 'Error', 'Incoming', 5, 'Reject',
+ 'ISNULL([IATA_CODE]) || TRIM([IATA_CODE]) == ""', 'ETL_Admins'),
+
+-- 8. Airports: Invalid latitude/longitude range
+('Invalid_Coordinates',
+ 'Latitude must be -90 to 90, Longitude must be -180 to 180.',
+ 'STG_Airports', 'LATITUDE',
+ 'Error', 'Validity', 4, 'Reject',
+ '([LATITUDE] < -90 || [LATITUDE] > 90) || ([LONGTITUDE] < -180 || [LONGTITUDE] > 180)', 'Data_Stewards');
 GO
 
 select * from DQ_Audit_STG_Flights;
