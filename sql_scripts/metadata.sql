@@ -65,28 +65,28 @@ CREATE TABLE dbo.DQ_Rules (
 );
 GO
 
-CREATE TABLE dbo.DQ_Logs (
-    LogKey              BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- The Log Key
+--CREATE TABLE dbo.DQ_Logs (
+--    LogKey              BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- The Log Key
     
-    -- Foreign Keys
-    RuleKey             INT NOT NULL,              -- Link to DQ_Rules
-    ExecutionID         NVARCHAR(50),              -- Link to your ETL Batch/Execution ID
+--    -- Foreign Keys
+--    RuleKey             INT NOT NULL,              -- Link to DQ_Rules
+--    ExecutionID         NVARCHAR(50),              -- Link to your ETL Batch/Execution ID
     
-    -- Event Details
-    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
+--    -- Event Details
+--    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
     
-    -- Action & Status Tracking
-    DQAction            NVARCHAR(20),              -- Action taken: 'Reject', 'Allow', 'Fix'
-    CorrectionStatus    NVARCHAR(20) DEFAULT 'Pending', -- 'Fixed', 'Not Fixed', 'Ignored'
+--    -- Action & Status Tracking
+--    DQAction            NVARCHAR(20),              -- Action taken: 'Reject', 'Allow', 'Fix'
+--    CorrectionStatus    NVARCHAR(20) DEFAULT 'Pending', -- 'Fixed', 'Not Fixed', 'Ignored'
     
-    -- Pointers to the Bad Data
-    TableName           NVARCHAR(100),             -- Table Key
-    RowBusinessKey      NVARCHAR(255),             -- Row Key (e.g., FlightDate + Airline + FlightNum)
-    AuditRecordID       BIGINT,                    -- Pointer to the specific row in DQ Audit Tables
+--    -- Pointers to the Bad Data
+--    TableName           NVARCHAR(100),             -- Table Key
+--    RowBusinessKey      NVARCHAR(255),             -- Row Key (e.g., FlightDate + Airline + FlightNum)
+--    AuditRecordID       BIGINT,                    -- Pointer to the specific row in DQ Audit Tables
     
-    CONSTRAINT FK_DQLog_Rule FOREIGN KEY (RuleKey) REFERENCES dbo.DQ_Rules(RuleKey)
-);
-GO
+--    CONSTRAINT FK_DQLog_Rule FOREIGN KEY (RuleKey) REFERENCES dbo.DQ_Rules(RuleKey)
+--);
+--GO
 
 CREATE TABLE dbo.ETL_Execution_Log (
     -- 1. Identity Key (Used to link DQ Logs)
@@ -164,19 +164,30 @@ CREATE TABLE dbo.DQ_Audit_STG_Airports (
 GO
 
 -- =====================================================================
--- 2.3. AUDIT TABLE FOR FLIGHTS_1
+-- 2.3. AUDIT TABLE FOR FLIGHTS
 -- =====================================================================
 
-CREATE TABLE dbo.DQ_Audit_STG_Flights_1 (
-    -- MANDATORY AUDIT COLUMNS
-    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    DQLogID             BIGINT,
-    RuleID              INT,
-    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
-    DQAction            NVARCHAR(50),
-    DQStatus            NVARCHAR(50),
+USE FLIGHTS_METADATA;
+GO
 
-    -- ORIGINAL DATA COLUMNS
+CREATE TABLE dbo.DQ_Audit_STG_Flights (
+    -- =========================================================
+    -- 1. AUDIT METADATA (Quản lý lỗi)
+    -- =========================================================
+    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    DQLogID             BIGINT,             -- Link đến lần chạy (Execution Log)
+    RuleID              INT,                -- Link đến Rule bị vi phạm
+    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
+    DQAction            NVARCHAR(50),       -- Reject / Fix / Allow
+    DQStatus            NVARCHAR(50),       -- Pending / Fixed
+    
+    -- Cột này để phân biệt nguồn dữ liệu (VD: 'STG_Flights_1')
+    SourceTableName     NVARCHAR(50),       
+
+    -- =========================================================
+    -- 2. ORIGINAL DATA (Dữ liệu gốc bị lỗi)
+    -- =========================================================
+    
     [DATE]              DATE,
     AIRLINE             CHAR(2),
     FLIGHT_NUMBER       INT,
@@ -205,104 +216,152 @@ CREATE TABLE dbo.DQ_Audit_STG_Flights_1 (
     AIRLINE_DELAY       FLOAT,
     LATE_AIRCRAFT_DELAY FLOAT,
     WEATHER_DELAY       FLOAT,
+    
+    -- Metadata từ Source
     CREATED             DATETIME2,
-    MODIFIED            DATETIME2
+    MODIFIED            DATETIME2,
+    
+    -- Ghi chú thêm về lỗi (nếu cần mở rộng sau này)
+    ErrorMessage        NVARCHAR(MAX)
 );
 GO
 
--- =====================================================================
--- 2.4. AUDIT TABLE FOR FLIGHTS_2
--- =====================================================================
+--CREATE TABLE dbo.DQ_Audit_STG_Flights_1 (
+--    -- MANDATORY AUDIT COLUMNS
+--    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+--    DQLogID             BIGINT,
+--    RuleID              INT,
+--    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
+--    DQAction            NVARCHAR(50),
+--    DQStatus            NVARCHAR(50),
 
-CREATE TABLE dbo.DQ_Audit_STG_Flights_2 (
-    -- MANDATORY AUDIT COLUMNS
-    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    DQLogID             BIGINT,
-    RuleID              INT,
-    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
-    DQAction            NVARCHAR(50),
-    DQStatus            NVARCHAR(50),
+--    -- ORIGINAL DATA COLUMNS
+--    [DATE]              DATE,
+--    AIRLINE             CHAR(2),
+--    FLIGHT_NUMBER       INT,
+--    TAIL_NUMBER         VARCHAR(10),
+--    ORIGIN_AIRPORT      CHAR(10),
+--    DESTINATION_AIRPORT CHAR(10),
+--    SCHEDULED_DEPARTURE CHAR(10),
+--    DEPARTURE_TIME      CHAR(10),
+--    DEPARTURE_DELAY     FLOAT,
+--    TAXI_OUT            FLOAT,
+--    WHEELS_OFF          CHAR(10),
+--    SCHEDULED_TIME      FLOAT,
+--    ELAPSED_TIME        FLOAT,
+--    AIR_TIME            FLOAT,
+--    DISTANCE            FLOAT,
+--    WHEELS_ON           CHAR(10),
+--    TAXI_IN             FLOAT,
+--    SCHEDULED_ARRIVAL   CHAR(10),
+--    ARRIVAL_TIME        CHAR(10),
+--    ARRIVAL_DELAY       FLOAT,
+--    DIVERTED            INT,
+--    CANCELLED           INT,
+--    CANCELLATION_REASON VARCHAR(1),
+--    AIR_SYSTEM_DELAY    FLOAT,
+--    SECURITY_DELAY      FLOAT,
+--    AIRLINE_DELAY       FLOAT,
+--    LATE_AIRCRAFT_DELAY FLOAT,
+--    WEATHER_DELAY       FLOAT,
+--    CREATED             DATETIME2,
+--    MODIFIED            DATETIME2
+--);
+--GO
 
-    -- ORIGINAL DATA COLUMNS
-    [DATE]              DATE,
-    AIRLINE             CHAR(2),
-    FLIGHT_NUMBER       INT,
-    TAIL_NUMBER         VARCHAR(10),
-    ORIGIN_AIRPORT      CHAR(10),
-    DESTINATION_AIRPORT CHAR(10),
-    SCHEDULED_DEPARTURE CHAR(10),
-    DEPARTURE_TIME      CHAR(10),
-    DEPARTURE_DELAY     FLOAT,
-    TAXI_OUT            FLOAT,
-    WHEELS_OFF          CHAR(10),
-    SCHEDULED_TIME      FLOAT,
-    ELAPSED_TIME        FLOAT,
-    AIR_TIME            FLOAT,
-    DISTANCE            FLOAT,
-    WHEELS_ON           CHAR(10),
-    TAXI_IN             FLOAT,
-    SCHEDULED_ARRIVAL   CHAR(10),
-    ARRIVAL_TIME        CHAR(10),
-    ARRIVAL_DELAY       FLOAT,
-    DIVERTED            INT,
-    CANCELLED           INT,
-    CANCELLATION_REASON VARCHAR(1),
-    AIR_SYSTEM_DELAY    FLOAT,
-    SECURITY_DELAY      FLOAT,
-    AIRLINE_DELAY       FLOAT,
-    LATE_AIRCRAFT_DELAY FLOAT,
-    WEATHER_DELAY       FLOAT,
-    CREATED             DATETIME2,
-    MODIFIED            DATETIME2
-);
-GO
+---- =====================================================================
+---- 2.4. AUDIT TABLE FOR FLIGHTS_2
+---- =====================================================================
 
--- =====================================================================
--- 2.5. AUDIT TABLE FOR FLIGHTS_3
--- =====================================================================
+--CREATE TABLE dbo.DQ_Audit_STG_Flights_2 (
+--    -- MANDATORY AUDIT COLUMNS
+--    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+--    DQLogID             BIGINT,
+--    RuleID              INT,
+--    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
+--    DQAction            NVARCHAR(50),
+--    DQStatus            NVARCHAR(50),
 
-CREATE TABLE dbo.DQ_Audit_STG_Flights_3 (
-    -- MANDATORY AUDIT COLUMNS
-    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    DQLogID             BIGINT,
-    RuleID              INT,
-    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
-    DQAction            NVARCHAR(50),
-    DQStatus            NVARCHAR(50),
+--    -- ORIGINAL DATA COLUMNS
+--    [DATE]              DATE,
+--    AIRLINE             CHAR(2),
+--    FLIGHT_NUMBER       INT,
+--    TAIL_NUMBER         VARCHAR(10),
+--    ORIGIN_AIRPORT      CHAR(10),
+--    DESTINATION_AIRPORT CHAR(10),
+--    SCHEDULED_DEPARTURE CHAR(10),
+--    DEPARTURE_TIME      CHAR(10),
+--    DEPARTURE_DELAY     FLOAT,
+--    TAXI_OUT            FLOAT,
+--    WHEELS_OFF          CHAR(10),
+--    SCHEDULED_TIME      FLOAT,
+--    ELAPSED_TIME        FLOAT,
+--    AIR_TIME            FLOAT,
+--    DISTANCE            FLOAT,
+--    WHEELS_ON           CHAR(10),
+--    TAXI_IN             FLOAT,
+--    SCHEDULED_ARRIVAL   CHAR(10),
+--    ARRIVAL_TIME        CHAR(10),
+--    ARRIVAL_DELAY       FLOAT,
+--    DIVERTED            INT,
+--    CANCELLED           INT,
+--    CANCELLATION_REASON VARCHAR(1),
+--    AIR_SYSTEM_DELAY    FLOAT,
+--    SECURITY_DELAY      FLOAT,
+--    AIRLINE_DELAY       FLOAT,
+--    LATE_AIRCRAFT_DELAY FLOAT,
+--    WEATHER_DELAY       FLOAT,
+--    CREATED             DATETIME2,
+--    MODIFIED            DATETIME2
+--);
+--GO
 
-    -- ORIGINAL DATA COLUMNS
-    [DATE]              DATE,
-    AIRLINE             CHAR(2),
-    FLIGHT_NUMBER       INT,
-    TAIL_NUMBER         VARCHAR(10),
-    ORIGIN_AIRPORT      CHAR(10),
-    DESTINATION_AIRPORT CHAR(10),
-    SCHEDULED_DEPARTURE CHAR(10),
-    DEPARTURE_TIME      CHAR(10),
-    DEPARTURE_DELAY     FLOAT,
-    TAXI_OUT            FLOAT,
-    WHEELS_OFF          CHAR(10),
-    SCHEDULED_TIME      FLOAT,
-    ELAPSED_TIME        FLOAT,
-    AIR_TIME            FLOAT,
-    DISTANCE            FLOAT,
-    WHEELS_ON           CHAR(10),
-    TAXI_IN             FLOAT,
-    SCHEDULED_ARRIVAL   CHAR(10),
-    ARRIVAL_TIME        CHAR(10),
-    ARRIVAL_DELAY       FLOAT,
-    DIVERTED            INT,
-    CANCELLED           INT,
-    CANCELLATION_REASON VARCHAR(1),
-    AIR_SYSTEM_DELAY    FLOAT,
-    SECURITY_DELAY      FLOAT,
-    AIRLINE_DELAY       FLOAT,
-    LATE_AIRCRAFT_DELAY FLOAT,
-    WEATHER_DELAY       FLOAT,
-    CREATED             DATETIME2,
-    MODIFIED            DATETIME2
-);
-GO
+---- =====================================================================
+---- 2.5. AUDIT TABLE FOR FLIGHTS_3
+---- =====================================================================
+
+--CREATE TABLE dbo.DQ_Audit_STG_Flights_3 (
+--    -- MANDATORY AUDIT COLUMNS
+--    AuditRecordID       BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+--    DQLogID             BIGINT,
+--    RuleID              INT,
+--    DQTimestamp         DATETIME2 DEFAULT GETDATE(),
+--    DQAction            NVARCHAR(50),
+--    DQStatus            NVARCHAR(50),
+
+--    -- ORIGINAL DATA COLUMNS
+--    [DATE]              DATE,
+--    AIRLINE             CHAR(2),
+--    FLIGHT_NUMBER       INT,
+--    TAIL_NUMBER         VARCHAR(10),
+--    ORIGIN_AIRPORT      CHAR(10),
+--    DESTINATION_AIRPORT CHAR(10),
+--    SCHEDULED_DEPARTURE CHAR(10),
+--    DEPARTURE_TIME      CHAR(10),
+--    DEPARTURE_DELAY     FLOAT,
+--    TAXI_OUT            FLOAT,
+--    WHEELS_OFF          CHAR(10),
+--    SCHEDULED_TIME      FLOAT,
+--    ELAPSED_TIME        FLOAT,
+--    AIR_TIME            FLOAT,
+--    DISTANCE            FLOAT,
+--    WHEELS_ON           CHAR(10),
+--    TAXI_IN             FLOAT,
+--    SCHEDULED_ARRIVAL   CHAR(10),
+--    ARRIVAL_TIME        CHAR(10),
+--    ARRIVAL_DELAY       FLOAT,
+--    DIVERTED            INT,
+--    CANCELLED           INT,
+--    CANCELLATION_REASON VARCHAR(1),
+--    AIR_SYSTEM_DELAY    FLOAT,
+--    SECURITY_DELAY      FLOAT,
+--    AIRLINE_DELAY       FLOAT,
+--    LATE_AIRCRAFT_DELAY FLOAT,
+--    WEATHER_DELAY       FLOAT,
+--    CREATED             DATETIME2,
+--    MODIFIED            DATETIME2
+--);
+--GO
 
 -- =====================================================================
 -- 3. INSERT DỮ LIỆU KHỞI TẠO
@@ -320,6 +379,61 @@ INSERT INTO dbo.DQ_Rules (RuleName, Description, TargetTable, TargetColumn, Rule
 ('Ref_Airline_Check', 'Airline code must exist in NDS.', 'STG_Flights_1', 'AIRLINE', 'Error', 'Cross-Reference', 5, 'Reject', 'AirlineSK IS NULL', 'ETL_Admins'), 
 ('Negative_Distance', 'Distance cannot be negative.', 'STG_Flights_1', 'DISTANCE', 'Warning', 'Incoming', 3, 'Fix', 'DISTANCE < 0', 'Data_Stewards'), 
 ('Missing_Dep_Delay', 'Departure Delay is NULL.', 'STG_Flights_1', 'DEPARTURE_DELAY', 'Warning', 'Incoming', 1, 'Allow', 'DEPARTURE_DELAY IS NULL', NULL);
+GO
+
+INSERT INTO dbo.DQ_Rules 
+(RuleName, Description, TargetTable, TargetColumn, RuleExpression, RuleType, RiskLevel, Action)
+VALUES 
+
+-- =======================================================
+-- BẢNG AIRLINES (3 Rules)
+-- =======================================================
+
+-- Rule 1: Sống còn - Khóa chính không được thiếu
+('AL_Check_Missing_Key', 
+ 'AirlineNK (IATA Code) is mandatory. Cannot be NULL.', 
+ 'Airlines', 'AirlineNK', 
+ 'ISNULL([AirlineNK]) || TRIM([AirlineNK]) == ""', 
+ 'Error', 5, 'Reject'),
+
+-- Rule 2: Định dạng - Mã hãng bay phải đúng 2 ký tự (VD: VN, AA)
+('AL_Check_Format', 
+ 'Airline Code must be exactly 2 characters.', 
+ 'Airlines', 'AirlineNK', 
+ 'LEN(TRIM([AirlineNK])) != 2', 
+ 'Error', 4, 'Reject'),
+
+-- Rule 3: Làm sạch - Thiếu tên thì gán "Unknown" để không mất dữ liệu
+('AL_Fix_Missing_Name', 
+ 'If Name is missing, replace with "Unknown Airline".', 
+ 'Airlines', 'AirlineName', 
+ 'ISNULL([AirlineName]) || TRIM([AirlineName]) == ""', 
+ 'Warning', 2, 'Fix'),
+
+-- =======================================================
+-- BẢNG AIRPORTS (3 Rules)
+-- =======================================================
+
+-- Rule 4: Sống còn - Khóa sân bay không được thiếu
+('AP_Check_Missing_Key', 
+ 'AirportNK (IATA Code) is mandatory. Cannot be NULL.', 
+ 'Airports', 'AirportNK', 
+ 'ISNULL([AirportNK]) || TRIM([AirportNK]) == ""', 
+ 'Error', 5, 'Reject'),
+
+-- Rule 5: Định dạng - Mã sân bay phải đúng 3 ký tự (VD: SGN, HAN)
+('AP_Check_Format', 
+ 'Airport Code must be exactly 3 characters.', 
+ 'Airports', 'AirportNK', 
+ 'LEN(TRIM([AirportNK])) != 3', 
+ 'Error', 4, 'Reject'),
+
+-- Rule 6: Logic - Tọa độ sai (Vĩ độ quá 90 hoặc Kinh độ quá 180)
+('AP_Check_Coordinates', 
+ 'Latitude/Longitude out of valid geographic range.', 
+ 'Airports', 'Latitude', 
+ '[Latitude] < -90 || [Latitude] > 90 || [Longitude] < -180 || [Longitude] > 180', 
+ 'Error', 5, 'Reject');
 GO
 -- =====================================================================
 -- 4. Data Quality Firewall
@@ -583,3 +697,8 @@ BEGIN
     PRINT 'Firewall Process Successfully Completed.';
 END;
 GO
+
+
+
+select * from DQ_Audit_STG_Flights;
+select * from ETL_Execution_Log;

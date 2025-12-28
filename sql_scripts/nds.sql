@@ -131,3 +131,7 @@ CREATE TABLE dbo.Flights (
     CONSTRAINT FK_Flights_Source FOREIGN KEY (SourceSK) REFERENCES dbo.SourceSystem(SourceSK)
 );
 GO
+
+select * from Flights
+
+SELECT * FROM Airports
