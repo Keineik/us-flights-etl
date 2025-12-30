@@ -145,7 +145,7 @@ CREATE TABLE dbo.Flights_3 (
 -- 3. INSERT DỮ LIỆU MẪU
 -- =====================================================================
 BULK INSERT dbo.Airlines
-FROM 'C:\Keineik\Projects\us-flights-etl\data\airlines.csv'
+FROM 'C:\Users\PC\source\repos\us-flights-etl\data\airlines.csv'
 WITH
 (
 	FORMAT = 'CSV',
@@ -158,7 +158,7 @@ WITH
 GO
 
 BULK INSERT dbo.Airports
-FROM 'C:\Keineik\Projects\us-flights-etl\data\filtered_airpoirt.csv'
+FROM 'C:\Users\PC\source\repos\us-flights-etl\data\filtered_airpoirt.csv'
 WITH
 (
 	FORMAT = 'CSV',
@@ -171,7 +171,7 @@ WITH
 GO
 
 BULK INSERT dbo.Flights_1
-FROM 'C:\Keineik\Projects\us-flights-etl\data\filtered_flights_1.csv'
+FROM 'C:\Users\PC\source\repos\us-flights-etl\data\filtered_flights_1.csv'
 WITH
 (
 	FORMAT = 'CSV',
@@ -185,7 +185,7 @@ WITH
 GO
 
 BULK INSERT dbo.Flights_2
-FROM 'C:\Keineik\Projects\us-flights-etl\data\filtered_flights_2.csv'
+FROM 'C:\Users\PC\source\repos\us-flights-etl\data\filtered_flights_2.csv'
 WITH
 (
 	FORMAT = 'CSV',
@@ -199,7 +199,7 @@ WITH
 GO
 
 BULK INSERT dbo.Flights_3
-FROM 'C:\Keineik\Projects\us-flights-etl\data\filtered_flights_3.csv'
+FROM 'C:\Users\PC\source\repos\us-flights-etl\data\filtered_flights_3.csv'
 WITH
 (
 	FORMAT = 'CSV',
