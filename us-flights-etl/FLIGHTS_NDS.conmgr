@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=THUYF;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-{3915A975-714C-4801-9848-F4CFE31F5B27}FLIGHTS_NDS;" />
+      DTS:ConnectionString="Data Source=TQPHONG;Initial Catalog=FLIGHTS_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-{3915A975-714C-4801-9848-F4CFE31F5B27}FLIGHTS_NDS;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

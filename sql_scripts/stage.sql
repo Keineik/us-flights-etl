@@ -137,7 +137,3 @@ CREATE TABLE dbo.STG_Flights_3 (
 	CREATED					DATETIME2,
 	MODIFIED				DATETIME2
 )
-
-
-select * from STG_Flights_1
-select * from STG_Airports

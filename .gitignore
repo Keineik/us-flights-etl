@@ -114,6 +114,7 @@ TestResults/
 # Local environment variables
 .env.local
 .env.*.local
+.venv
 
 # Build artifacts
 artifacts/
@@ -128,3 +129,5 @@ artifacts/
 # Any local configuration overrides
 local.settings.json
 local.settings.*.json
+
+agModels-predictClass/

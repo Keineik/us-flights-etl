@@ -297,6 +297,3 @@ VALUES
  'Error', 'Validity', 4, 'Reject',
  '([LATITUDE] < -90 || [LATITUDE] > 90) || ([LONGTITUDE] < -180 || [LONGTITUDE] > 180)', 'Data_Stewards');
 GO
-
-select * from DQ_Audit_STG_Flights;
-select * from ETL_Execution_Log;

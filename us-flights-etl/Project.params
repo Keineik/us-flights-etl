@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=THUYF;Initial Catalog=FLIGHTS_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=TQPHONG;Initial Catalog=FLIGHTS_Metadata;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=THUYF;Initial Catalog=FLIGHTS_Source;Provider=SQLOLEDB;Integrated Security=SSPI;</SSIS:Property>
+        SSIS:Name="Value">Data Source=TQPHONG;Initial Catalog=FLIGHTS_Source;Provider=SQLOLEDB;Integrated Security=SSPI;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -58,7 +58,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=THUYF;Initial Catalog=FLIGHTS_Stage;Provider=SQLOLEDB;Integrated Security=SSPI;</SSIS:Property>
+        SSIS:Name="Value">Data Source=TQPHONG;Initial Catalog=FLIGHTS_Stage;Provider=SQLOLEDB;Integrated Security=SSPI;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -100,7 +100,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=THUYF;Initial Catalog=FLIGHTS_DDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=TQPHONG;Initial Catalog=FLIGHTS_DDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

@@ -60,7 +60,7 @@
           <ConfigurationSetting>
             <Id>FLIGHTS DDS</Id>
             <Name>FLIGHTS DDS</Name>
-            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=THUYF;Integrated Security=SSPI;Initial Catalog=FLIGHTS_DDS</Value>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=TQPHONG;Integrated Security=SSPI;Initial Catalog=FLIGHTS_DDS</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
